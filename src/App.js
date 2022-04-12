@@ -1,7 +1,8 @@
+import { Header } from "./frontend/Components/index";
 function App() {
   return (
     <div className="app">
-      <h1>STAlive</h1>
+      <Header />
     </div>
   );
 }

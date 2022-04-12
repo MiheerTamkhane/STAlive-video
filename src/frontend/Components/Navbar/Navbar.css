@@ -1,0 +1,32 @@
+.navbar {
+  background-color: var(--secondary-bg);
+  color: var(--color-primary);
+}
+.search-container {
+  margin: 0 0.5rem;
+}
+.search-container input {
+  display: flex;
+  border: none;
+  outline: none;
+  background-color: var(--color-text);
+}
+.search-container input.hide {
+  display: none;
+}
+.signin-text {
+  font-size: 1.2rem;
+}
+.search-btn {
+  color: var(--color-primary);
+  background-color: var(--color-body-bg);
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 50%;
+}
+.close-btn {
+  padding: 0.3rem;
+  border: none;
+  cursor: pointer;
+}
