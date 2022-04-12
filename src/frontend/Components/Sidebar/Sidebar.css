@@ -17,3 +17,6 @@
   margin: 0.5rem 0;
   cursor: pointer;
 }
+.sidebar-items:hover {
+  background-color: var(--color-primary-muted);
+}
