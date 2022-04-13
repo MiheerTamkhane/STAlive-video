@@ -4,12 +4,16 @@
  * */
 
 export const videos = [
+  //https://www.youtube.com/watch?v=
   {
-    _id: "Wo5dMEP_BbI",
-    title: "Awesome Video about Coding",
+    _id: "qp0HIF3SfI4",
+    title: "How great leaders inspire action | Simon Sinek",
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    creator: "Soham Shah",
+      " Simon Sinek presents a simple but powerful model for how leaders inspire action, starting with a golden circle and the question 'Why?'  His examples include Apple, Martin Luther King, and the Wright brothers -- and as a counterpoint Tivo, which (until a recent court victory that tripled its stock price) appeared to be struggling.",
+    creator: "Simon Sinek",
+    categoryName: "Mashup",
+    img: "https://i.ytimg.com/vi/qp0HIF3SfI4/0.jpg",
+    views: "401k",
   },
   {
     _id: "F_Riqjdh2oM",

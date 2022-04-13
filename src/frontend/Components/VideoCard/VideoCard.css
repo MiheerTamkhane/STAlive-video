@@ -1,0 +1,22 @@
+/* .video-card.ct-basic-card {
+  min-width: 100%;
+  box-shadow: none;
+  height: 200px;
+} */
+.ct-basic-card {
+  padding: 0;
+  max-width: 100%;
+  max-height: fit-content;
+  background-color: var(--color-body-bg);
+}
+.ct-card-img.video-thumbnail {
+  max-height: 260px;
+  object-fit: cover;
+  object-position: 0rem -2rem;
+}
+.video-name {
+  font-size: 1.8rem;
+}
+.video-card-stats {
+  margin: 1rem;
+}

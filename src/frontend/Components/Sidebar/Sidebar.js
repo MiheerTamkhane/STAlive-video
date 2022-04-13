@@ -1,6 +1,5 @@
-import React from "react";
 import "./Sidebar.css";
-const Sidebar = () => {
+export const Sidebar = () => {
   return (
     <div className="sidebar-container">
       <ul className="sidebar-list">
@@ -28,5 +27,3 @@ const Sidebar = () => {
     </div>
   );
 };
-
-export { Sidebar };

@@ -1,0 +1,9 @@
+.card-swiper-container {
+  background-color: var(--secondary-bg);
+  color: var(--color-text);
+}
+
+.swiper-card {
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+}

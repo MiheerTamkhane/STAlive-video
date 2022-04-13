@@ -13,11 +13,11 @@ const Navbar = () => {
       </div>
       <div className="ct-right-nav">
         <div className="ct-nav-user">
-          <div className="ct-nav-icons signin-text">SIGN IN</div>
+          <h2 className="ct-nav-icons signin-text ct-btn">SIGN IN</h2>
           <div className="ct-nav-icons search-container">
             <input
               type="text"
-              className={isSearch ? "ct-input" : "ct-input hide"}
+              className={isSearch ? "ct-input search-input" : "ct-input hide"}
               placeholder="Type to search"
             />
             {isSearch ? (

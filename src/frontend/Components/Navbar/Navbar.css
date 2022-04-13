@@ -1,32 +1,44 @@
 .navbar {
   background-color: var(--secondary-bg);
   color: var(--color-primary);
+  font-size: 1.6rem;
 }
 .search-container {
   margin: 0 0.5rem;
 }
-.search-container input {
+.logo h1 {
+  font-size: 3.6rem;
+}
+input.ct-input.search-input {
   display: flex;
   border: none;
   outline: none;
   background-color: var(--color-text);
+  color: var(--secondary-bg);
+  padding: 1.1rem;
+  width: 300px;
+  margin-left: 1rem;
 }
 .search-container input.hide {
   display: none;
 }
 .signin-text {
-  font-size: 1.2rem;
+  font-size: 2rem;
+  padding: 1rem 1.6rem;
+  background-color: var(--color-body-bg);
 }
 .search-btn {
   color: var(--color-primary);
   background-color: var(--color-body-bg);
   border: none;
   cursor: pointer;
-  padding: 0.3rem;
+  padding: 1.2rem;
   border-radius: 50%;
+  margin-left: 1rem;
 }
 .close-btn {
-  padding: 0.3rem;
+  padding: 0.6rem;
   border: none;
   cursor: pointer;
+  background-color: var(--color-text);
 }
