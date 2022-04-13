@@ -15,9 +15,11 @@ input.ct-input.search-input {
   outline: none;
   background-color: var(--color-text);
   color: var(--secondary-bg);
-  padding: 1.1rem;
+  padding: 1.4rem;
   width: 300px;
   margin-left: 1rem;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
 }
 .search-container input.hide {
   display: none;
@@ -37,8 +39,10 @@ input.ct-input.search-input {
   margin-left: 1rem;
 }
 .close-btn {
-  padding: 0.6rem;
+  padding: 1rem;
   border: none;
   cursor: pointer;
   background-color: var(--color-text);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
