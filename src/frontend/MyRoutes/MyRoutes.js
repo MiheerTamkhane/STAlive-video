@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import { LandingPage } from "../index";
 const MyRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<LandingPage />} />
     </Routes>
   );
 };
