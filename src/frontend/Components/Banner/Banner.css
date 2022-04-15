@@ -40,3 +40,7 @@
 .main-cta:hover {
   background-color: var(--violet-700);
 }
+
+.banner-btns-div {
+  display: flex;
+}
