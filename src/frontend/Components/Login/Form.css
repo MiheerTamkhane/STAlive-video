@@ -1,0 +1,66 @@
+form.ct-form {
+  border-radius: 7px;
+  font-size: 1.6rem;
+  color: var(--color-text);
+  height: fit-content;
+}
+.ct-form h2 {
+  margin-top: 0;
+  margin-bottom: 1.8rem;
+}
+.ct-input {
+  border-color: var(--color-primary);
+  font-size: 1.6rem;
+  border-radius: 3px;
+  color: var(--color-primary);
+}
+.form-check-input {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.form-check-input input {
+  accent-color: var(--color-primary);
+}
+.form-check-input > span {
+  margin-left: 5px;
+}
+
+.form-btn {
+  color: var(--color-body-bg);
+  background-color: var(--color-primary);
+  transition: 250ms ease;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  border-radius: 3px;
+}
+.form-btn:hover {
+  background-color: var(--violet-700);
+}
+
+.login-guest {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Nunito", sans-serif;
+  margin-top: 0.8rem;
+  border-radius: 3px;
+}
+.ct-checkbox-div {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+}
+.form-link {
+  width: fit-content;
+  margin: 0.8rem auto;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  color: var(--color-text);
+  transition: 250ms ease;
+}
+.form-link:hover {
+  color: var(--color-primary);
+}
