@@ -1,0 +1,29 @@
+.signin-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 4rem;
+}
+.form-container {
+  display: flex;
+  height: 60vh;
+}
+.btn-container {
+  width: 300px;
+  border-radius: 5px;
+  display: flex;
+}
+.btn-container > * {
+  font-size: 1.8rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-text);
+  border: none;
+  color: var(--gray-700);
+  cursor: pointer;
+}
+.btn-container .active {
+  color: var(--color-primary-varient);
+  background-color: var(--color-primary);
+}

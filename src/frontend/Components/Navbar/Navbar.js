@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import { useAuth } from "../../index";
 import "./Navbar.css";
 const Navbar = () => {
   const [isSearch, setIsSearch] = useState(false);
+  const {
+    auth: { status, user },
+    logoutHandler,
+  } = useAuth();
+
   return (
     <nav className="nav-bar navbar">
       <div className="ct-nav-logo">
@@ -13,7 +18,26 @@ const Navbar = () => {
       </div>
       <div className="ct-right-nav">
         <div className="ct-nav-user">
-          <h2 className="ct-nav-icons signin-text ct-btn">SIGN IN</h2>
+          {!status ? (
+            <NavLink to="/signin" className="ct-nav-icons signin-text ct-btn">
+              SIGN IN
+            </NavLink>
+          ) : (
+            <div className="dropdown">
+              <button className="material-icons-outlined dropbtn">
+                account_circle
+              </button>
+              <div className="dropdown-content">
+                <button className="dropdown-item">
+                  <h4>Hi, {user}</h4>
+                </button>
+                <button className="dropdown-item" onClick={logoutHandler}>
+                  <p>Logout</p>
+                  <span className="material-icons-outlined">logout</span>
+                </button>
+              </div>
+            </div>
+          )}
           <div className="ct-nav-icons search-container">
             <input
               type="text"

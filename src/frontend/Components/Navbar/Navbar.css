@@ -15,9 +15,10 @@ input.ct-input.search-input {
   outline: none;
   background-color: var(--color-text);
   color: var(--secondary-bg);
-  padding: 1.4rem;
+  padding: 1.28rem;
   width: 300px;
   margin-left: 1rem;
+  border-radius: 0px;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
@@ -25,8 +26,10 @@ input.ct-input.search-input {
   display: none;
 }
 .signin-text {
+  text-decoration: none;
   font-size: 2rem;
   padding: 1rem 1.6rem;
+  color: var(--color-primary);
   background-color: var(--color-body-bg);
 }
 .search-btn {
@@ -45,4 +48,65 @@ input.ct-input.search-input {
   background-color: var(--color-text);
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
+}
+
+.dropbtn {
+  background-color: var(--color-body-bg);
+  color: var(--color-primary);
+  border: none;
+  font-size: 3.6rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0rem;
+  background-color: #f1f1f1;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.dropdown-content .dropdown-item:hover {
+  border-radius: 7px;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  color: var(--color-body-bg);
+  background-color: var(--color-primary);
+}
+.dropdown-item {
+  padding: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--color-primary-varient);
+  outline: none;
+  border: none;
+  border-radius: 7px;
+}
+.dropdown-item > * {
+  font-size: 1.6rem;
+}
+.dropdown-item .material-icons-outlined {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
 }
