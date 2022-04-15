@@ -12,12 +12,20 @@ const Banner = () => {
             become a member, you make our mission of spreading ideas from all
             over the world possible.
           </p>
-          <button className="ct-btn main-cta">
-            <a href="#" className="banner-link">
-              Join Today
-            </a>
-            <span className="material-icons-outlined">chevron_right</span>
-          </button>
+          <div className="banner-btns-div">
+            <button className="ct-btn ct-blue main-cta">
+              <a href="#" className="banner-link">
+                Explore
+              </a>
+              <span className="material-icons-outlined">video_library</span>
+            </button>
+            <button className="ct-btn main-cta">
+              <a href="#" className="banner-link">
+                Join Today
+              </a>
+              <span className="material-icons-outlined">chevron_right</span>
+            </button>
+          </div>
         </div>
       </div>
     </main>
