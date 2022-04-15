@@ -18,3 +18,7 @@ export { LandingPage } from "./Pages/LandingPage/LandingPage";
 export { SigninPage } from "./Pages/SigninPage/SigninPage";
 // All context exports below
 export { useAuth, AuthProvider } from "./Contexts/AuthContext";
+
+// Seriveces exporst below:
+export { signupService } from "./Services/AuthServices/signupSerivice";
+export { loginService } from "./Services/AuthServices/loginService";

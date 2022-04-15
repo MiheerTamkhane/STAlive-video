@@ -1,8 +1,7 @@
 import React from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { useAuth } from "../../index";
+import { useAuth, signupService } from "../../index";
 import "../Login/Form.css";
 const Signup = () => {
   const { setAuth } = useAuth();
@@ -13,26 +12,15 @@ const Signup = () => {
     email: "",
     password: "",
   });
-  const signupHandler = async ({ firstName, lastName, email, password }) => {
-    try {
-      const request = await axios.post("/api/auth/signup", {
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        password: password,
-      });
-      localStorage.setItem("authToken", request.data.encodedToken);
-      localStorage.setItem("user", request.data.createdUser.firstName);
-      setAuth((prevAuth) => ({
-        ...prevAuth,
-        user: request.data.createdUser.firstName,
-        status: true,
-        authToken: request.data.encodedToken,
-      }));
-      navigate("/");
-    } catch (err) {
-      console.error(err);
-    }
+  const signupHandler = async (userSignup) => {
+    const data = await signupService(userSignup);
+    setAuth((prevAuth) => ({
+      ...prevAuth,
+      user: data.createdUser.firstName,
+      status: true,
+      authToken: data.encodedToken,
+    }));
+    navigate("/");
   };
   return (
     <form

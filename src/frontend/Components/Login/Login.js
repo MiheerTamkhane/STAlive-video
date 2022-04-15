@@ -1,7 +1,6 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../../index";
+import { useAuth, loginService } from "../../index";
 import "./Form.css";
 const Login = () => {
   const navigate = useNavigate();
@@ -9,25 +8,16 @@ const Login = () => {
     email: "",
     password: "",
   });
-  const { auth, setAuth } = useAuth();
-  const loginHandler = async ({ email, password }) => {
-    try {
-      const response = await axios.post("/api/auth/login", {
-        email: email,
-        password: password,
-      });
-      localStorage.setItem("authToken", response.data.encodedToken);
-      localStorage.setItem("user", response.data.foundUser.firstName);
-      setAuth((prevAuth) => ({
-        ...prevAuth,
-        user: response.data.foundUser.firstName,
-        status: true,
-        authToken: response.data.encodedToken,
-      }));
-      navigate("/");
-    } catch (err) {
-      console.error(err);
-    }
+  const { setAuth } = useAuth();
+  const loginHandler = async (userLogin) => {
+    const data = await loginService(userLogin);
+    setAuth((prevAuth) => ({
+      ...prevAuth,
+      user: data.foundUser.firstName,
+      status: true,
+      authToken: data.encodedToken,
+    }));
+    navigate("/");
   };
   return (
     <main className="form-container">
