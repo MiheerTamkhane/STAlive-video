@@ -7,7 +7,8 @@
   margin-bottom: 4rem;
   margin-top: 1rem;
   cursor: pointer;
+  filter: brightness(80%);
 }
 .swiper-card:hover {
-  filter: brightness(70%);
+  filter: brightness(100%);
 }

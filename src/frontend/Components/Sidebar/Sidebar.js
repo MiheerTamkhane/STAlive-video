@@ -3,6 +3,9 @@ import "./Sidebar.css";
 import { useNav } from "../../index";
 export const Sidebar = () => {
   const { showSidebar } = useNav();
+  const getStyled = ({ isActive }) => {
+    return isActive ? "sidebar-items active" : "sidebar-items";
+  };
   return (
     <div
       className={
@@ -10,57 +13,27 @@ export const Sidebar = () => {
       }
     >
       <ul className="sidebar-list">
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive ? "sidebar-items active" : "sidebar-items"
-          }
-        >
+        <NavLink to="/" className={getStyled}>
           <span className="material-icons">home</span>
           <span>HOME</span>
         </NavLink>
-        <NavLink
-          to="/videos"
-          className={({ isActive }) =>
-            isActive ? "sidebar-items active" : "sidebar-items"
-          }
-        >
+        <NavLink to="/videos" className={getStyled}>
           <span className="material-icons-outlined">video_library</span>
           <span>WATCH</span>
         </NavLink>
-        <NavLink
-          to="/history"
-          className={({ isActive }) =>
-            isActive ? "sidebar-items active" : "sidebar-items"
-          }
-        >
+        <NavLink to="/history" className={getStyled}>
           <span className="material-icons">history</span>
           <span>HISTORY</span>
         </NavLink>
-        <NavLink
-          to="/liked"
-          className={({ isActive }) =>
-            isActive ? "sidebar-items active" : "sidebar-items"
-          }
-        >
+        <NavLink to="/liked" className={getStyled}>
           <span className="material-icons">favorite_border</span>
           <span>LIKED</span>
         </NavLink>
-        <NavLink
-          to="/playlist"
-          className={({ isActive }) =>
-            isActive ? "sidebar-items active" : "sidebar-items"
-          }
-        >
+        <NavLink to="/playlist" className={getStyled}>
           <span className="material-icons-outlined">playlist_add</span>
           <span>PLAYLIST</span>
         </NavLink>
-        <NavLink
-          to="/watchlater"
-          className={({ isActive }) =>
-            isActive ? "sidebar-items active" : "sidebar-items"
-          }
-        >
+        <NavLink to="/watchlater" className={getStyled}>
           <span className="material-icons-outlined">watch_later</span>
           <span>WATCH LATER</span>
         </NavLink>
