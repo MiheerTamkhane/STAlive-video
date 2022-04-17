@@ -9,6 +9,7 @@ import {
   HistoryPage,
   WatchlaterPage,
   LikedPage,
+  SingleVideoPage,
 } from "../index";
 import Mockman from "mockman-js";
 const MyRoutes = () => {
@@ -21,6 +22,7 @@ const MyRoutes = () => {
       {!status && <Route path="/join" element={<SigninPage />} />}
 
       <Route path="/videos" element={<VideoListing />} />
+      <Route path="/videos/:videoID" element={<SingleVideoPage />} />
       <Route path="/history" element={<HistoryPage />} />
       <Route path="/watchlater" element={<WatchlaterPage />} />
       <Route path="/liked" element={<LikedPage />} />

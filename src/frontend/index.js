@@ -22,6 +22,7 @@ export { PlaylistPage } from "./Pages/PlaylistPage/PlaylistPage";
 export { HistoryPage } from "./Pages/HistoryPage/HistoryPage";
 export { LikedPage } from "./Pages/LikedPage/LikedPage";
 export { WatchlaterPage } from "./Pages/WatchlaterPage/WatchlaterPage";
+export { SingleVideoPage } from "./Pages/SingleVideoPage/SingleVideoPage";
 
 // All context exports below
 export { useAuth, AuthProvider } from "./Contexts/AuthContext";
