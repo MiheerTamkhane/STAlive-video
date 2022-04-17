@@ -18,7 +18,7 @@ const MyRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      {!status && <Route path="/signin" element={<SigninPage />} />}
+      {!status && <Route path="/join" element={<SigninPage />} />}
 
       <Route path="/videos" element={<VideoListing />} />
       <Route path="/history" element={<HistoryPage />} />

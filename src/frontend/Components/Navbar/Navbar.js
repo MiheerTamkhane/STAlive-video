@@ -25,7 +25,7 @@ const Navbar = () => {
       <div className="ct-right-nav">
         <div className="ct-nav-user">
           {!status ? (
-            <NavLink to="/signin" className="ct-nav-icons signin-text ct-btn">
+            <NavLink to="/join" className="ct-nav-icons signin-text ct-btn">
               SIGN IN
             </NavLink>
           ) : (
