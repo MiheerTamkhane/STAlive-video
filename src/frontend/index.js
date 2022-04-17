@@ -9,6 +9,7 @@ export { SliderVideoCard } from "./Components/SliderVideoCard/SliderVideoCard";
 export { VideoCard } from "./Components/VideoCard/VideoCard";
 export { Login } from "./Components/Login/Login";
 export { Signup } from "./Components/Signup/Signup";
+export { ReactPlayerFrame } from "./Components/ReactPlayerFrame/ReactPlayerFrame";
 
 // MyRoutes exports
 export { MyRoutes } from "./MyRoutes/MyRoutes";
