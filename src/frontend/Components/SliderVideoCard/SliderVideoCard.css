@@ -1,0 +1,16 @@
+.ct-basic-card.slider-video-card {
+  padding: 0;
+  max-width: 100%;
+  height: 30rem;
+  background-color: var(--color-body-bg);
+}
+.ct-card-img.video-thumbnail {
+  max-height: 26rem;
+  object-fit: cover;
+}
+.video-name {
+  font-size: 1.8rem;
+}
+.slider-video-card-stats {
+  margin: 1rem;
+}

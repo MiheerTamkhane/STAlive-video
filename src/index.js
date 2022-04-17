@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { makeServer } from "./server";
-import { AuthProvider } from "./frontend/index";
+import { AuthProvider, VideosProvider, NavProvider } from "./frontend/index";
 // Call make Server
 makeServer();
 
@@ -12,7 +12,11 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <App />
+        <NavProvider>
+          <VideosProvider>
+            <App />
+          </VideosProvider>
+        </NavProvider>
       </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,

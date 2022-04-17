@@ -1,28 +1,42 @@
+import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
+import { useNav } from "../../index";
 export const Sidebar = () => {
+  const { showSidebar } = useNav();
+  const getStyled = ({ isActive }) => {
+    return isActive ? "sidebar-items active" : "sidebar-items";
+  };
   return (
-    <div className="sidebar-container">
+    <div
+      className={
+        showSidebar ? "sidebar-container show-sidebar" : "sidebar-container"
+      }
+    >
       <ul className="sidebar-list">
-        <li className="sidebar-items">
-          <span class="material-icons">home</span>
+        <NavLink to="/" className={getStyled}>
+          <span className="material-icons">home</span>
           <span>HOME</span>
-        </li>
-        <li className="sidebar-items">
-          <span class="material-icons">history</span>
+        </NavLink>
+        <NavLink to="/videos" className={getStyled}>
+          <span className="material-icons-outlined">video_library</span>
+          <span>WATCH</span>
+        </NavLink>
+        <NavLink to="/history" className={getStyled}>
+          <span className="material-icons">history</span>
           <span>HISTORY</span>
-        </li>
-        <li className="sidebar-items">
+        </NavLink>
+        <NavLink to="/liked" className={getStyled}>
           <span className="material-icons">favorite_border</span>
           <span>LIKED</span>
-        </li>
-        <li className="sidebar-items">
-          <span class="material-icons-outlined">playlist_add</span>
+        </NavLink>
+        <NavLink to="/playlist" className={getStyled}>
+          <span className="material-icons-outlined">playlist_add</span>
           <span>PLAYLIST</span>
-        </li>
-        <li className="sidebar-items">
+        </NavLink>
+        <NavLink to="/watchlater" className={getStyled}>
           <span className="material-icons-outlined">watch_later</span>
           <span>WATCH LATER</span>
-        </li>
+        </NavLink>
       </ul>
     </div>
   );

@@ -1,31 +1,23 @@
 import "./VideoCard.css";
-const VideoCard = () => {
-  const demo = {
-    _id: "LTnI7cmpDZI",
-    title: "What makes life complete? | Gaur Gopal Das",
-    description:
-      "Gaur Gopal Prabhu explains how Life is like a jigsaw puzzle and we can only experience completeness when all pieces are in their right place. Explore the different dimensions of life and put them together to make it holistic and fulfilling.",
-    creator: "Gaur Gopal Das",
-    categoryName: "Mashup",
-    img: "https://i.ytimg.com/vi/LTnI7cmpDZI/0.jpg",
-    views: "401k",
-  };
 
+const VideoCard = ({ data }) => {
+  const { _id, timeStatus, speaker, title } = data;
   return (
-    <a className="ct-basic-card video-card">
-      <img
-        src={demo.img}
-        alt="video-thumbnail"
-        className="ct-card-img video-thumbnail"
-      />
-      <div className="ct-product-stats video-card-stats">
-        <h1>{demo.creator}</h1>
-
-        <div className="ct-product-stats">
-          <p className="ct-product-info video-name">{demo.title}</p>
-        </div>
+    <div className="video-card-container">
+      <div className="video-card-img">
+        <img
+          src={`https://img.youtube.com/vi/${_id}/maxresdefault.jpg`}
+          alt={title}
+        />
+        <small className="video-time-status">{timeStatus}</small>
       </div>
-    </a>
+      <div className="video-card-content">
+        <em>
+          <p>{speaker}</p>
+        </em>
+        <h3>{title}</h3>
+      </div>
+    </div>
   );
 };
 

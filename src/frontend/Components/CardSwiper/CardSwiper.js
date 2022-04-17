@@ -9,47 +9,25 @@ import SwiperCore, {
 import "swiper/swiper-bundle.min.css";
 import "./CardSwiper.css";
 
-import { VideoCard } from "../../index";
+import { SliderVideoCard, useVideos } from "../../index";
 SwiperCore.use([Autoplay, Navigation, Pagination, Controller, Thumbs]);
 const CardSwiper = () => {
+  const { videos } = useVideos();
   return (
     <div className="card-swiper-container">
       <Swiper
         navigation
         pagination={{ clickable: true }}
         spaceBetween={20}
-        slidesPerView={3}
+        slidesPerView={4}
       >
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
-        <SwiperSlide className="swiper-card">
-          <VideoCard />
-        </SwiperSlide>
+        {videos.map((item) => {
+          return (
+            <SwiperSlide className="swiper-card">
+              <SliderVideoCard data={item} />
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );

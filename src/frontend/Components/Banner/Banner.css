@@ -15,9 +15,9 @@
   font-size: 2.6rem;
   color: var(--gray-100);
   padding: 0.5rem 1rem;
-  max-width: 600px;
+  max-width: 60rem;
   margin: auto;
-  height: 400px;
+  height: 40rem;
 }
 .hero-container h1 {
   color: var(--gray-100);
