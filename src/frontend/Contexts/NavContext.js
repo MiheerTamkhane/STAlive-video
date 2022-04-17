@@ -3,9 +3,9 @@ import { createContext, useContext, useState } from "react";
 const NavContext = createContext();
 
 const NavProvider = ({ children }) => {
-  const [isNav, setIsNav] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(false);
   return (
-    <NavContext.Provider value={{ isNav, setIsNav }}>
+    <NavContext.Provider value={{ showSidebar, setShowSidebar }}>
       {children}
     </NavContext.Provider>
   );

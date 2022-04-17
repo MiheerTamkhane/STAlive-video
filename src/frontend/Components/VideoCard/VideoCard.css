@@ -1,22 +1,48 @@
-/* .video-card.ct-basic-card {
-  min-width: 100%;
-  box-shadow: none;
-  height: 200px;
-} */
-.ct-basic-card {
-  padding: 0;
-  max-width: 100%;
-  max-height: fit-content;
+.video-card-container {
+  margin-bottom: 2rem;
+  max-width: 260px;
+  cursor: pointer;
   background-color: var(--color-body-bg);
 }
-.ct-card-img.video-thumbnail {
-  max-height: 260px;
-  object-fit: cover;
-  object-position: 0rem -2rem;
+.video-card-container:hover {
+  filter: brightness(70%);
+  background-color: var(--secondary-bg);
 }
-.video-name {
-  font-size: 1.8rem;
+
+.video-card-img {
+  position: relative;
 }
-.video-card-stats {
-  margin: 1rem;
+.video-card-content {
+  padding: 1rem;
+  font-size: 1.6rem;
+  color: var(--color-text);
+}
+.video-card-content h3:hover {
+  text-decoration: underline;
+}
+.video-time-status {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0px 5px;
+}
+
+@media only screen and (max-width: 1020px) {
+  .video-card-container {
+    max-width: 220px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .video-card-container {
+    max-width: 220px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .video-card-container {
+    max-width: 80%;
+    max-height: min-content;
+  }
 }

@@ -1,0 +1,14 @@
+.videos-container {
+  margin-left: 20rem;
+  margin-top: 7rem;
+  padding: 1.8rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@media only screen and (max-width: 900px) {
+  .videos-container {
+    margin-top: 7rem;
+    margin-left: 0;
+  }
+}

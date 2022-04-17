@@ -9,7 +9,7 @@ import SwiperCore, {
 import "swiper/swiper-bundle.min.css";
 import "./CardSwiper.css";
 
-import { VideoCard } from "../../index";
+import { SliderVideoCard } from "../../index";
 SwiperCore.use([Autoplay, Navigation, Pagination, Controller, Thumbs]);
 const CardSwiper = () => {
   return (
@@ -18,37 +18,37 @@ const CardSwiper = () => {
         navigation
         pagination={{ clickable: true }}
         spaceBetween={20}
-        slidesPerView={3}
+        slidesPerView={4}
       >
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
         <SwiperSlide className="swiper-card">
-          <VideoCard />
+          <SliderVideoCard />
         </SwiperSlide>
       </Swiper>
     </div>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../../index";
+import { useAuth, useNav } from "../../index";
 import "./Navbar.css";
 const Navbar = () => {
   const [isSearch, setIsSearch] = useState(false);
@@ -8,11 +8,17 @@ const Navbar = () => {
     auth: { status, user },
     logoutHandler,
   } = useAuth();
-
+  const { setShowSidebar } = useNav();
   return (
     <nav className="nav-bar navbar">
       <div className="ct-nav-logo">
         <div className="logo">
+          <span
+            className="material-icons"
+            onClick={() => setShowSidebar((preState) => !preState)}
+          >
+            menu
+          </span>
           <h1>STAlive</h1>
         </div>
       </div>
