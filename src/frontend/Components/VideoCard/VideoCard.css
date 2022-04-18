@@ -3,6 +3,7 @@
   max-width: 26rem;
   cursor: pointer;
   background-color: var(--color-body-bg);
+  text-decoration: none;
 }
 .video-card-container:hover {
   filter: brightness(70%);

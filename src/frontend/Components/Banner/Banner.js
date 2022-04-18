@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Banner.css";
 
 const Banner = () => {
@@ -15,9 +15,9 @@ const Banner = () => {
           </p>
           <div className="banner-btns-div">
             <button className="ct-btn ct-blue main-cta">
-              <NavLink to="/videos" className="banner-link">
+              <Link to="/videos" className="banner-link">
                 Explore
-              </NavLink>
+              </Link>
               <span className="material-icons-outlined">video_library</span>
             </button>
             <button className="ct-btn main-cta">

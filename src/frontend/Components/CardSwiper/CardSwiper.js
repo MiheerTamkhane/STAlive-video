@@ -23,7 +23,7 @@ const CardSwiper = () => {
       >
         {videos.map((item) => {
           return (
-            <SwiperSlide className="swiper-card">
+            <SwiperSlide key={item.id} className="swiper-card">
               <SliderVideoCard data={item} />
             </SwiperSlide>
           );
