@@ -33,3 +33,7 @@ export { useNav, NavProvider } from "./Contexts/NavContext";
 // Seriveces exporst below:
 export { signupService } from "./Services/AuthServices/signupSerivice";
 export { loginService } from "./Services/AuthServices/loginService";
+
+// Utils functions below
+export { getVideoLink } from "./Utils/getVideoLink";
+export { getThumbnailLink } from "./Utils/getThumbnailLink";
