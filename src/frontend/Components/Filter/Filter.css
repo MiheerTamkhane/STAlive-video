@@ -1,0 +1,24 @@
+.filter-container {
+  width: 100%;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--secondary-bg);
+}
+.filter-wrapper {
+  padding: 1rem;
+  flex-grow: 1;
+}
+.form-control {
+  background-color: var(--secondary-bg);
+  color: var(--color-text);
+  width: 100%;
+  font-weight: 400;
+  font-size: 1.7rem;
+  display: flex;
+  align-items: center;
+  padding: 8px 1.4rem;
+  border-radius: 5px;
+}

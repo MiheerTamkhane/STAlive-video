@@ -2,8 +2,8 @@ import "./VideoCard.css";
 import { Link } from "react-router-dom";
 import { getThumbnailLink } from "../../index";
 const VideoCard = ({ data }) => {
-  const { _id, timeStatus, speaker, title } = data;
-
+  const { _id, timeStatus, speaker, title, uploadAt } = data;
+  const date = new Date(uploadAt);
   return (
     <Link to={`/videos/${_id}`} className="video-card-container">
       <div className="video-card-img">
@@ -15,6 +15,7 @@ const VideoCard = ({ data }) => {
           <p>{speaker}</p>
         </em>
         <h3>{title}</h3>
+        <small>{date.toDateString()}</small>
       </div>
     </Link>
   );

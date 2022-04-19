@@ -10,6 +10,7 @@ export { VideoCard } from "./Components/VideoCard/VideoCard";
 export { Login } from "./Components/Login/Login";
 export { Signup } from "./Components/Signup/Signup";
 export { ReactPlayerFrame } from "./Components/ReactPlayerFrame/ReactPlayerFrame";
+export { Filter } from "./Components/Filter/Filter";
 
 // MyRoutes exports
 export { MyRoutes } from "./MyRoutes/MyRoutes";
@@ -29,6 +30,7 @@ export { SingleVideoPage } from "./Pages/SingleVideoPage/SingleVideoPage";
 export { useAuth, AuthProvider } from "./Contexts/AuthContext";
 export { useVideos, VideosProvider } from "./Contexts/VideosContext";
 export { useNav, NavProvider } from "./Contexts/NavContext";
+export { useFilter, FilterProvider } from "./Contexts/FilterContext";
 
 // Seriveces exporst below:
 export { signupService } from "./Services/AuthServices/signupSerivice";
@@ -37,3 +39,8 @@ export { loginService } from "./Services/AuthServices/loginService";
 // Utils functions below
 export { getVideoLink } from "./Utils/getVideoLink";
 export { getThumbnailLink } from "./Utils/getThumbnailLink";
+export {
+  filterByTopics,
+  filterByDuration,
+  filterBySorting,
+} from "./Utils/filterUtilsFunctions";
