@@ -12,9 +12,12 @@ import "./VideoListing.css";
 const VideoListing = () => {
   const { videos } = useVideos();
   const { state } = useFilter();
-  const videosFiltered = filterByTopics(state, videos);
-  const videosAfterFiltered = filterBySorting(state, videosFiltered);
-  const finalVideos = filterByDuration(state, videosAfterFiltered);
+  const videosFilteredByTopics = filterByTopics(state, videos);
+  const videosFilteredbyDuration = filterByDuration(
+    state,
+    videosFilteredByTopics
+  );
+  const finalVideos = filterBySorting(state, videosFilteredbyDuration);
   return (
     <>
       <Sidebar />
