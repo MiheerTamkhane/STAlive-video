@@ -18,6 +18,16 @@ const SingleVideoPage = () => {
       }
     })();
   }, []);
+
+  function numFormatter(num) {
+    if (num > 999 && num < 1000000) {
+      return (num / 1000).toFixed(1) + "K";
+    } else if (num > 1000000) {
+      return (num / 1000000).toFixed(1) + "M";
+    } else if (num < 900) {
+      return num;
+    }
+  }
   return (
     <>
       <Sidebar />
@@ -30,7 +40,7 @@ const SingleVideoPage = () => {
                 <h4>{singleVideo.speaker}</h4>
               </em>
               <p>{singleVideo.title}</p>
-              <h5>View : {singleVideo.views}</h5>
+              <h5>View : {numFormatter(singleVideo.views)}</h5>
             </div>
             <div className="video-btns">
               <button className="video-like-btn">
