@@ -1,24 +1,8 @@
 const filterByTopics = (state, videos) => {
-  switch (state.topic) {
-    case "leadership":
-      return [...videos].filter((video) => video.categoryName === state.topic);
-    case "focus":
-      return [...videos].filter((video) => video.categoryName === state.topic);
-    case "mastery":
-      return [...videos].filter((video) => video.categoryName === state.topic);
-    case "creativity":
-      return [...videos].filter((video) => video.categoryName === state.topic);
-    case "code":
-      return [...videos].filter((video) => video.categoryName === state.topic);
-    case "computer":
-      return [...videos].filter((video) => video.categoryName === state.topic);
-    case "meditation":
-      return [...videos].filter((video) => video.categoryName === state.topic);
-    case "science":
-      return [...videos].filter((video) => video.categoryName === state.topic);
-    default:
-      return videos;
+  if (state.topic) {
+    return [...videos].filter((video) => video.categoryName === state.topic);
   }
+  return videos;
 };
 
 function getTime(video) {
