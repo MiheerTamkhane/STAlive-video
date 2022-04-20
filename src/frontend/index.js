@@ -31,10 +31,13 @@ export { useAuth, AuthProvider } from "./Contexts/AuthContext";
 export { useVideos, VideosProvider } from "./Contexts/VideosContext";
 export { useNav, NavProvider } from "./Contexts/NavContext";
 export { useFilter, FilterProvider } from "./Contexts/FilterContext";
+export { useLikedVideos, LikeProvider } from "./Contexts/LikeContext";
 
 // Seriveces exporst below:
 export { signupService } from "./Services/AuthServices/signupSerivice";
 export { loginService } from "./Services/AuthServices/loginService";
+export { addToLikedVideos } from "./Services/LikeServices/addToLikedVideos";
+export { removeFromLikedVideos } from "./Services/LikeServices/removeFromLikedVideos";
 
 // Utils functions below
 export { getVideoLink } from "./Utils/getVideoLink";

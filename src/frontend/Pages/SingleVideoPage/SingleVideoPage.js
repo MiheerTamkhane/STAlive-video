@@ -1,10 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Sidebar, ReactPlayerFrame } from "../../index";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+  Sidebar,
+  ReactPlayerFrame,
+  useAuth,
+  useLikedVideos,
+} from "../../index";
 import "./SingleVideoPage.css";
 
 const SingleVideoPage = () => {
+  const navigate = useNavigate();
+  const {
+    auth: { authToken, status },
+  } = useAuth();
+  const { likedVideos, addToLikedVideosHandler, removeFromLikedVideosHandler } =
+    useLikedVideos();
   const [singleVideo, setSingleVideo] = useState({});
   const { videoID } = useParams();
   useEffect(() => {
@@ -28,6 +39,7 @@ const SingleVideoPage = () => {
       return num;
     }
   }
+  console.log("hayee", likedVideos);
   return (
     <>
       <Sidebar />
@@ -43,10 +55,34 @@ const SingleVideoPage = () => {
               <h5>View : {numFormatter(singleVideo.views)}</h5>
             </div>
             <div className="video-btns">
-              <button className="video-like-btn">
-                <span className="material-icons-outlined">favorite_border</span>
-                <span className="video-btns-text">Likes</span>
-              </button>
+              {likedVideos.find((video) => video._id === singleVideo._id) ? (
+                <button
+                  className="video-like-btn"
+                  onClick={() => {
+                    removeFromLikedVideosHandler(authToken, singleVideo._id);
+                  }}
+                >
+                  <span className="material-icons">favorite</span>
+                  <span className="video-btns-text">Likes</span>
+                </button>
+              ) : (
+                <button
+                  className="video-like-btn"
+                  onClick={() => {
+                    if (status) {
+                      addToLikedVideosHandler(authToken, singleVideo);
+                    } else {
+                      navigate("/join");
+                    }
+                  }}
+                >
+                  <span className="material-icons-outlined">
+                    favorite_border
+                  </span>
+                  <span className="video-btns-text">Likes</span>
+                </button>
+              )}
+
               <button className="video-like-btn">
                 <span className="material-icons-outlined">ios_share</span>
                 <span className="video-btns-text">Share</span>

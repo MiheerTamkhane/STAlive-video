@@ -4,7 +4,6 @@ const FilterContext = createContext();
 
 const FilterProvider = ({ children }) => {
   const reducerFun = (state, action) => {
-    // console.log(state, action);
     switch (action.type) {
       case "SORT_BY":
         return { ...state, sortBy: action.payload };

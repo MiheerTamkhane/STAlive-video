@@ -1,10 +1,11 @@
-import { Sidebar } from "../../index";
+import { Sidebar, useLikedVideos } from "../../index";
 const LikedPage = () => {
+  const { likedVideos } = useLikedVideos();
   return (
-    <div>
+    <>
       <Sidebar />
-      LikedPage
-    </div>
+      <div></div>
+    </>
   );
 };
 
