@@ -36,7 +36,7 @@
   align-self: flex-start;
 }
 .video-details p {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 .video-btns {
   display: flex;
@@ -55,13 +55,17 @@
 }
 
 .video-btns .material-icons-outlined {
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 .video-btns .material-icons {
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 .video-btns-text {
-  font-size: 1.7rem;
+  font-size: 1.6rem;
+}
+.video-description {
+  padding: 1rem 2rem;
+  font-size: 2rem;
 }
 
 @media only screen and (max-width: 900px) {

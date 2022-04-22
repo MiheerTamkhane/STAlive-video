@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export const addToLikedVideos = async (authToken, video) => {
+export const addToHistory = async (authToken, video) => {
   try {
     const { data } = await axios.post(
-      "/api/user/likes",
+      "/api/user/history",
       { video },
       {
         headers: {
@@ -11,7 +11,7 @@ export const addToLikedVideos = async (authToken, video) => {
         },
       }
     );
-    return data.likes;
+    return data.history;
   } catch (e) {
     console.error(e);
   }

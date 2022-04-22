@@ -11,6 +11,7 @@ export { Login } from "./Components/Login/Login";
 export { Signup } from "./Components/Signup/Signup";
 export { ReactPlayerFrame } from "./Components/ReactPlayerFrame/ReactPlayerFrame";
 export { Filter } from "./Components/Filter/Filter";
+export { HorizontalCard } from "./Components/HorizontalCard/HorizontalCard";
 
 // MyRoutes exports
 export { MyRoutes } from "./MyRoutes/MyRoutes";
@@ -32,12 +33,22 @@ export { useVideos, VideosProvider } from "./Contexts/VideosContext";
 export { useNav, NavProvider } from "./Contexts/NavContext";
 export { useFilter, FilterProvider } from "./Contexts/FilterContext";
 export { useLikedVideos, LikeProvider } from "./Contexts/LikeContext";
+export {
+  useWatchLater,
+  WatchLaterProvider,
+} from "./Contexts/WatchLaterContext";
+export { useHistory, HistoryProvider } from "./Contexts/HistoryContext";
 
 // Seriveces exporst below:
 export { signupService } from "./Services/AuthServices/signupSerivice";
 export { loginService } from "./Services/AuthServices/loginService";
 export { addToLikedVideos } from "./Services/LikeServices/addToLikedVideos";
 export { removeFromLikedVideos } from "./Services/LikeServices/removeFromLikedVideos";
+export { addToWatchLater } from "./Services/WatchLaterServices/addToWatchLater";
+export { removeFromWatchLater } from "./Services/WatchLaterServices/removeFromWatchLater";
+export { addToHistory } from "./Services/HistoryServices/addToHistory";
+export { removeFromHistory } from "./Services/HistoryServices/removeFromHistory";
+export { removeAllFromHistory } from "./Services/HistoryServices/removeAllFromHistory";
 
 // Utils functions below
 export { getVideoLink } from "./Utils/getVideoLink";
@@ -47,3 +58,6 @@ export {
   filterByDuration,
   filterBySorting,
 } from "./Utils/filterUtilsFunctions";
+
+// Reducer Functions below:
+export { filterReducerFunction } from "./Reducers/filterReducerFunction";

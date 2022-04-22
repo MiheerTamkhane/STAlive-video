@@ -27,7 +27,6 @@ const LikeProvider = ({ children }) => {
 
   const addToLikedVideosHandler = async (authToken, video) => {
     const data = await addToLikedVideos(authToken, video);
-    console.log("folskdjfa", data);
     setLikedVideos(data);
   };
   const removeFromLikedVideosHandler = async (authToken, id) => {

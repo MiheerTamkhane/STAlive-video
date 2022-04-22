@@ -1,11 +1,19 @@
 import "./VideoCard.css";
 import { Link } from "react-router-dom";
-import { getThumbnailLink } from "../../index";
+import { getThumbnailLink, useHistory, useAuth } from "../../index";
 const VideoCard = ({ data }) => {
+  const {
+    auth: { authToken },
+  } = useAuth();
+  const { addToHistoryHandler } = useHistory();
   const { _id, timeStatus, speaker, title, uploadAt } = data;
   const date = new Date(uploadAt);
   return (
-    <Link to={`/videos/${_id}`} className="video-card-container">
+    <Link
+      to={`/videos/${_id}`}
+      className="video-card-container"
+      onClick={() => addToHistoryHandler(authToken, data, _id)}
+    >
       <div className="video-card-img">
         <img src={getThumbnailLink(_id)} alt={title} />
         <small className="video-time-status">{timeStatus}</small>

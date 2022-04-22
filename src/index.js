@@ -10,6 +10,8 @@ import {
   NavProvider,
   FilterProvider,
   LikeProvider,
+  WatchLaterProvider,
+  HistoryProvider,
 } from "./frontend/index";
 // Call make Server
 makeServer();
@@ -22,7 +24,11 @@ ReactDOM.render(
           <VideosProvider>
             <FilterProvider>
               <LikeProvider>
-                <App />
+                <WatchLaterProvider>
+                  <HistoryProvider>
+                    <App />
+                  </HistoryProvider>
+                </WatchLaterProvider>
               </LikeProvider>
             </FilterProvider>
           </VideosProvider>
