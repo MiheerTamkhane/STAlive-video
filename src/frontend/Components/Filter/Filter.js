@@ -28,10 +28,13 @@ const Filter = () => {
           id="filters-topic"
           className="form-control"
           onChange={(e) =>
-            dispatch({ type: "BY_TOPIC", payload: e.target.value })
+            dispatch({
+              type: "BY_TOPIC",
+              payload: e.target.value,
+            })
           }
         >
-          <option>Topics</option>
+          <option value="">Topics</option>
           <optgroup label="Top topics...">
             <option value="leadership">Leadership</option>
             <option value="focus">Focus</option>
@@ -54,7 +57,7 @@ const Filter = () => {
             dispatch({ type: "BY_TIME", payload: e.target.value })
           }
         >
-          <option>Duration</option>
+          <option value="">Duration</option>
           <option value="0-6">0-6 minutes</option>
           <option value="6-12">6-12 minutes</option>
           <option value="12-18">12-18 minutes</option>

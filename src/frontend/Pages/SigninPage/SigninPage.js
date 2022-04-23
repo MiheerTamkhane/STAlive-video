@@ -1,9 +1,9 @@
 import { useState } from "react";
-
 import { Login, Signup } from "../../index";
 import "./SigninPage.css";
 const SigninPage = () => {
   const [loginSignup, setLoginSignup] = useState();
+
   const showLogin = () => {
     setLoginSignup(false);
   };

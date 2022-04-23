@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth, loginService } from "../../index";
 import "./Form.css";
 const Login = () => {
-  const navigate = useNavigate();
   const [userLogin, setUserLogin] = useState({
     email: "",
     password: "",
   });
   const { setAuth } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
   const loginHandler = async (userLogin) => {
     const data = await loginService(userLogin);
     setAuth((prevAuth) => ({
@@ -17,7 +20,7 @@ const Login = () => {
       status: true,
       authToken: data.encodedToken,
     }));
-    navigate("/");
+    navigate(from, { replace: true });
   };
   return (
     <main className="form-container">
@@ -69,6 +72,10 @@ const Login = () => {
           type="submit"
           onClick={(e) => {
             e.preventDefault();
+            setUserLogin({
+              email: "adarshbalika@gmail.com",
+              password: "adarshBalika123",
+            });
             loginHandler({
               email: "adarshbalika@gmail.com",
               password: "adarshBalika123",

@@ -1,0 +1,30 @@
+.horizontal-card-container {
+  margin-bottom: 2rem;
+  max-width: 100%;
+  cursor: pointer;
+  background-color: var(--color-body-bg);
+  text-decoration: none;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: horizontal;
+}
+.horizontal-card-container:hover {
+  filter: brightness(70%);
+  background-color: var(--secondary-bg);
+}
+
+.horizontal-card-img {
+  max-width: 40%;
+}
+.horizontal-card-content {
+  padding: 1rem;
+  font-size: 1.6rem;
+  color: var(--color-text);
+}
+.horizontal-card-content h3:hover {
+  text-decoration: underline;
+}

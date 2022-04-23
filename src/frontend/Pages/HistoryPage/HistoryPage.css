@@ -1,0 +1,7 @@
+.clear-history-btn {
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1rem 1.6rem;
+  color: var(--color-primary);
+  background-color: var(--secondary-bg);
+}
