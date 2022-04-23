@@ -36,7 +36,7 @@ const SingleVideoPage = () => {
       setSingleVideo(data.video);
     })();
 
-    // addToHistoryHandler(authToken, singleVideo);
+    addToHistoryHandler(authToken, singleVideo);
   }, []);
 
   function numFormatter(num) {

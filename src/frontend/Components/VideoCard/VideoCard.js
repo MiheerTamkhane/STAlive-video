@@ -12,7 +12,7 @@ const VideoCard = ({ data }) => {
     <Link
       to={`/videos/${_id}`}
       className="video-card-container"
-      onClick={() => addToHistoryHandler(authToken, data, _id)}
+      onClick={() => addToHistoryHandler(authToken, data)}
     >
       <div className="video-card-img">
         <img src={getThumbnailLink(_id)} alt={title} />
