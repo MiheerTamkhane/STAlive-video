@@ -7,23 +7,27 @@ const LikeContext = createContext();
 const LikeProvider = ({ children }) => {
   const [likedVideos, setLikedVideos] = useState([]);
   const {
-    auth: { authToken },
+    auth: { authToken, status },
   } = useAuth();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await axios.get("/api/user/likes", {
-          headers: {
-            authorization: authToken,
-          },
-        });
-        setLikedVideos(data.likes);
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  }, []);
+    if (status) {
+      (async () => {
+        try {
+          const { data } = await axios.get("/api/user/likes", {
+            headers: {
+              authorization: authToken,
+            },
+          });
+          setLikedVideos(data.likes);
+        } catch (e) {
+          console.error(e);
+        }
+      })();
+    } else {
+      setLikedVideos([]);
+    }
+  }, [status]);
 
   const addToLikedVideosHandler = async (authToken, video) => {
     const data = await addToLikedVideos(authToken, video);

@@ -12,23 +12,27 @@ const HistoryContext = createContext();
 const HistoryProvider = ({ children }) => {
   const [historyVideos, setHistoryVideos] = useState([]);
   const {
-    auth: { authToken },
+    auth: { authToken, status },
   } = useAuth();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await axios.get("/api/user/history", {
-          headers: {
-            authorization: authToken,
-          },
-        });
-        setHistoryVideos(data.history);
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  }, []);
+    if (status) {
+      (async () => {
+        try {
+          const { data } = await axios.get("/api/user/history", {
+            headers: {
+              authorization: authToken,
+            },
+          });
+          setHistoryVideos(data.history);
+        } catch (e) {
+          console.error(e);
+        }
+      })();
+    } else {
+      setHistoryVideos([]);
+    }
+  }, [status]);
 
   const removeFromHistoryHandler = async (authToken, id) => {
     const data = await removeFromHistory(authToken, id);
@@ -47,7 +51,6 @@ const HistoryProvider = ({ children }) => {
     setHistoryVideos(data);
   };
 
-  console.log(historyVideos);
   return (
     <HistoryContext.Provider
       value={{

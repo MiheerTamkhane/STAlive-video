@@ -1,8 +1,15 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../index";
 function ProtectedRoute({ children }) {
-  const { auth } = useAuth();
-  return auth.status ? children : <Navigate to="/join" replace />;
+  const {
+    auth: { status },
+  } = useAuth();
+  const location = useLocation();
+  return status ? (
+    children
+  ) : (
+    <Navigate to="/join" state={{ from: location }} replace />
+  );
 }
 
 export { ProtectedRoute };

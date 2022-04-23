@@ -1,11 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useAuth, signupService } from "../../index";
 import "../Login/Form.css";
 const Signup = () => {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const [userSignup, setUserSignup] = useState({
     firstName: "",
     lastName: "",
@@ -20,7 +22,7 @@ const Signup = () => {
       status: true,
       authToken: data.encodedToken,
     }));
-    navigate("/");
+    navigate(from, { replace: true });
   };
   return (
     <form

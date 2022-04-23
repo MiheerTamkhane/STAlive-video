@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import {
   useVideos,
   Sidebar,
@@ -17,6 +17,7 @@ const SingleVideoPage = () => {
   const { videos } = useVideos();
   const navigate = useNavigate();
   const { addToHistoryHandler } = useHistory();
+  const location = useLocation();
   const {
     auth: { authToken, status },
   } = useAuth();
@@ -31,17 +32,11 @@ const SingleVideoPage = () => {
   const { videoID } = useParams();
   useEffect(() => {
     (async () => {
-      try {
-        const { data } = await axios.get(`/api/video/${videoID}`);
-        setSingleVideo(data.video);
-      } catch (e) {
-        console.error(e);
-        // 🔥  make sure to add navitage to 404 page here if the request didn't gives back data.
-        return;
-      }
+      const { data } = await axios.get(`/api/video/${videoID}`);
+      setSingleVideo(data.video);
     })();
 
-    addToHistoryHandler(authToken, singleVideo);
+    // addToHistoryHandler(authToken, singleVideo);
   }, []);
 
   function numFormatter(num) {
@@ -85,7 +80,7 @@ const SingleVideoPage = () => {
                     if (status) {
                       addToLikedVideosHandler(authToken, singleVideo);
                     } else {
-                      navigate("/join");
+                      navigate("/join", { state: { from: location } });
                     }
                   }}
                 >
@@ -114,7 +109,7 @@ const SingleVideoPage = () => {
                     if (status) {
                       addToWatchLaterHandler(authToken, singleVideo);
                     } else {
-                      navigate("/join");
+                      navigate("/join", { state: { from: location } });
                     }
                   }}
                 >

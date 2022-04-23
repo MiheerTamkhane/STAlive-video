@@ -7,23 +7,27 @@ const WatchLaterContext = createContext();
 const WatchLaterProvider = ({ children }) => {
   const [watchLaterVideos, setWatchLaterVideos] = useState([]);
   const {
-    auth: { authToken },
+    auth: { authToken, status },
   } = useAuth();
 
   useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await axios.get("/api/user/watchlater", {
-          headers: {
-            authorization: authToken,
-          },
-        });
-        setWatchLaterVideos(data.watchlater);
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  }, []);
+    if (status) {
+      (async () => {
+        try {
+          const { data } = await axios.get("/api/user/watchlater", {
+            headers: {
+              authorization: authToken,
+            },
+          });
+          setWatchLaterVideos(data.watchlater);
+        } catch (e) {
+          console.error(e);
+        }
+      })();
+    } else {
+      setWatchLaterVideos([]);
+    }
+  }, [status]);
 
   const addToWatchLaterHandler = async (authToken, video) => {
     const data = await addToWatchLater(authToken, video);
