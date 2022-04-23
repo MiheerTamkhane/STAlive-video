@@ -128,7 +128,13 @@ const SingleVideoPage = () => {
         </div>
         <div className="watch-next-container">
           {videos.map((item) => {
-            return <HorizontalCard key={item._id} data={item} />;
+            return (
+              <HorizontalCard
+                key={item._id}
+                data={item}
+                onSetSingleVideo={setSingleVideo}
+              />
+            );
           })}
         </div>
       </div>
