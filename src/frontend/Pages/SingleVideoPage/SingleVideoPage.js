@@ -35,8 +35,6 @@ const SingleVideoPage = () => {
       const { data } = await axios.get(`/api/video/${videoID}`);
       setSingleVideo(data.video);
     })();
-
-    addToHistoryHandler(authToken, singleVideo);
   }, []);
 
   function numFormatter(num) {
@@ -53,7 +51,11 @@ const SingleVideoPage = () => {
       <Sidebar />
       <div className="single-video-page">
         <div className="single-video-container">
-          <ReactPlayerFrame id={videoID} />
+          <ReactPlayerFrame
+            id={videoID}
+            authToken={authToken}
+            currentVideo={singleVideo}
+          />
           <div className="video-details-container">
             <div className="video-details">
               <em>

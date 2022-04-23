@@ -11,6 +11,7 @@ const HistoryContext = createContext();
 
 const HistoryProvider = ({ children }) => {
   const [historyVideos, setHistoryVideos] = useState([]);
+  console.log(historyVideos);
   const {
     auth: { authToken, status },
   } = useAuth();
@@ -36,7 +37,7 @@ const HistoryProvider = ({ children }) => {
 
   const removeFromHistoryHandler = async (authToken, id) => {
     const data = await removeFromHistory(authToken, id);
-    setHistoryVideos(data);
+    setHistoryVideos(() => data);
   };
   const removeAllFromHistoryHandler = async (authToken) => {
     const data = await removeAllFromHistory(authToken);
@@ -44,11 +45,11 @@ const HistoryProvider = ({ children }) => {
   };
 
   const addToHistoryHandler = async (authToken, video) => {
-    // if (historyVideos.find((historyVideo) => historyVideo._id === video._id)) {
-    //   removeFromHistoryHandler(authToken, video._id);
-    // }
+    if (historyVideos.find((historyVideo) => historyVideo._id === video._id)) {
+      removeFromHistoryHandler(authToken, video._id);
+    }
     const data = await addToHistory(authToken, video);
-    setHistoryVideos(data);
+    setHistoryVideos(() => data);
   };
 
   return (

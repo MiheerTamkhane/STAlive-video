@@ -1,8 +1,9 @@
 import React from "react";
 import "./ReactPlayerFrame.css";
 import ReactPlayer from "react-player";
-import { getVideoLink } from "../../index";
-const ReactPlayerFrame = ({ id }) => {
+import { getVideoLink, useHistory } from "../../index";
+const ReactPlayerFrame = ({ id, authToken, currentVideo }) => {
+  const { addToHistoryHandler } = useHistory();
   return (
     <div className="react-player-wrapper">
       <ReactPlayer
@@ -11,6 +12,8 @@ const ReactPlayerFrame = ({ id }) => {
         width="100%"
         height="100%"
         controls={true}
+        playing
+        onStart={() => addToHistoryHandler(authToken, currentVideo)}
       />
     </div>
   );
