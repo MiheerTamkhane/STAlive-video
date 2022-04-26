@@ -3,15 +3,16 @@
   max-width: 26rem;
   cursor: pointer;
   background-color: var(--color-body-bg);
+  position: relative;
+}
+.video-card-link {
   text-decoration: none;
 }
-.video-card-container:hover {
-  filter: brightness(70%);
-  background-color: var(--secondary-bg);
-}
-
 .video-card-img {
   position: relative;
+}
+.video-card-container:hover .video-card-img {
+  filter: brightness(60%);
 }
 .video-card-content {
   padding: 1rem;
@@ -30,7 +31,23 @@
   background-color: rgba(0, 0, 0, 0.5);
   padding: 0px 5px;
 }
+.action-container {
+  width: 100%;
+  position: absolute;
+  color: var(--color-primary);
+  bottom: 0;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
 
+.video-card-container:hover .action-container {
+  display: flex;
+}
+.action-container .material-icons-outlined:hover {
+  color: var(--color-text);
+}
 @media only screen and (max-width: 1020px) {
   .video-card-container {
     max-width: 22rem;

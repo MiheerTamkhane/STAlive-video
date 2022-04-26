@@ -1,0 +1,54 @@
+.playlist-card-container {
+  padding: 1rem;
+  margin-top: 0;
+  flex-direction: row-reverse;
+  align-items: center;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+
+.playlist-card {
+  padding: 1rem 0;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  height: fit-content;
+  width: 200px;
+  cursor: pointer;
+  position: relative;
+}
+.playlist-card:hover {
+  border-color: var(--color-text);
+}
+.playlist-card-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.playlist-card img {
+  object-fit: cover;
+}
+.playlist-card h2 {
+  font-size: 2.4rem;
+  color: var(--color-primary);
+  letter-spacing: 0.08em;
+}
+
+.playlist-card .delete-btn {
+  font-size: 3rem;
+  display: none;
+  padding: 5px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.playlist-card:hover .delete-btn {
+  display: unset;
+}

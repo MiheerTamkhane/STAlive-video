@@ -1,6 +1,6 @@
 import { Sidebar, HorizontalCard, useWatchLater } from "../../index";
 const WatchlaterPage = () => {
-  const { watchLaterVideos } = useWatchLater();
+  const { watchLaterVideos, removeFromWatchLaterHandler } = useWatchLater();
   return (
     <>
       <Sidebar />
@@ -9,7 +9,12 @@ const WatchlaterPage = () => {
       </div>
       <div className="videos-container other-pages-video-container">
         {watchLaterVideos.map((item) => (
-          <HorizontalCard key={item._id} data={item} />
+          <HorizontalCard
+            key={item._id}
+            data={item}
+            onRemoveHandler={removeFromWatchLaterHandler}
+            showRmvBtn={true}
+          />
         ))}
       </div>
     </>

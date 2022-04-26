@@ -1,0 +1,109 @@
+.modal-background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.close-model {
+  cursor: pointer;
+}
+.playlist-modal-container {
+  padding: 1.6rem 2rem;
+  background-color: var(--secondary-bg);
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  max-width: max-content;
+  border-radius: 7px;
+  box-shadow: 0 5px 5px rgb(0 0 0 / 15%);
+}
+
+.title-and-close {
+  width: 100%;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ct-form.playlist-form {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.ct-input.playlist-title {
+  padding: 1rem;
+}
+.playlist-desc.ct-input {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  border-color: var(--color-primary);
+  font-size: 1.6rem;
+  border-radius: 3px;
+  color: var(--color-primary);
+  background-color: var(--secondary-bg);
+  width: 100%;
+  height: auto;
+  margin-top: 0rem;
+  padding: 1rem;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+.user-playlist {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.single-playlist-container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--color-primary);
+  border-radius: 5px;
+  padding: 5px 0;
+}
+.playlist-checkbox {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  padding: 0 5px;
+  border-radius: 5px;
+  gap: 5px;
+}
+.playlist-checkbox > * {
+  cursor: pointer;
+}
+.playlist-checkbox input {
+  height: 1.7rem;
+  width: 1.7rem;
+  accent-color: var(--color-primary);
+  margin: 0 5px;
+}
+
+.delete-playlist-btn {
+  background-color: var(--secondary-bg);
+  border: none;
+  outline: none;
+  color: var(--color-text);
+  cursor: pointer;
+  padding-right: 5px;
+}
+
+.delete-playlist-btn:hover {
+  color: var(--color-error);
+}

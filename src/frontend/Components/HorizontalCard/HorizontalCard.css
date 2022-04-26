@@ -1,8 +1,12 @@
-.horizontal-card-container {
+.horizontal-card-wrapper {
   margin-bottom: 2rem;
   max-width: 100%;
   cursor: pointer;
+  display: flex;
+  position: relative;
   background-color: var(--color-body-bg);
+}
+.horizontal-card-container {
   text-decoration: none;
   display: flex;
   overflow: hidden;
@@ -27,4 +31,15 @@
 }
 .horizontal-card-content h3:hover {
   text-decoration: underline;
+}
+
+.horizontal-card-wrapper .delete-btn {
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
