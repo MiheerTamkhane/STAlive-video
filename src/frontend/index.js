@@ -12,6 +12,7 @@ export { Signup } from "./Components/Signup/Signup";
 export { ReactPlayerFrame } from "./Components/ReactPlayerFrame/ReactPlayerFrame";
 export { Filter } from "./Components/Filter/Filter";
 export { HorizontalCard } from "./Components/HorizontalCard/HorizontalCard";
+export { Modal } from "./Components/Modal/Modal";
 
 // MyRoutes exports
 export { MyRoutes } from "./MyRoutes/MyRoutes";
@@ -38,6 +39,7 @@ export {
   WatchLaterProvider,
 } from "./Contexts/WatchLaterContext";
 export { useHistory, HistoryProvider } from "./Contexts/HistoryContext";
+export { usePlaylists, PlaylistsProvider } from "./Contexts/PlaylistContext";
 
 // Seriveces exporst below:
 export { signupService } from "./Services/AuthServices/signupSerivice";
@@ -49,7 +51,9 @@ export { removeFromWatchLater } from "./Services/WatchLaterServices/removeFromWa
 export { addToHistory } from "./Services/HistoryServices/addToHistory";
 export { removeFromHistory } from "./Services/HistoryServices/removeFromHistory";
 export { removeAllFromHistory } from "./Services/HistoryServices/removeAllFromHistory";
-
+export { addToPlaylistsService } from "./Services/PlaylistServices/addToPlaylistsService";
+export { addVideoToPlaylistService } from "./Services/PlaylistServices/addVideoToPlaylistService";
+export { removeVideoFromPlaylistService } from "./Services/PlaylistServices/removeVideoFromPlaylistService";
 // Utils functions below
 export { getVideoLink } from "./Utils/getVideoLink";
 export { getThumbnailLink } from "./Utils/getThumbnailLink";
@@ -58,6 +62,7 @@ export {
   filterByDuration,
   filterBySorting,
 } from "./Utils/filterUtilsFunctions";
+export { numFormatter } from "./Utils/numFormatter";
 
 // Reducer Functions below:
 export { filterReducerFunction } from "./Reducers/filterReducerFunction";

@@ -1,6 +1,6 @@
 import { Sidebar, useLikedVideos, HorizontalCard } from "../../index";
 const LikedPage = () => {
-  const { likedVideos } = useLikedVideos();
+  const { likedVideos, removeFromLikedVideosHandler } = useLikedVideos();
   return (
     <>
       <Sidebar />
@@ -9,7 +9,12 @@ const LikedPage = () => {
       </div>
       <div className="videos-container other-pages-video-container">
         {likedVideos.map((item) => (
-          <HorizontalCard key={item._id} data={item} />
+          <HorizontalCard
+            key={item._id}
+            data={item}
+            onRemoveHandler={removeFromLikedVideosHandler}
+            showRmvBtn={true}
+          />
         ))}
       </div>
     </>

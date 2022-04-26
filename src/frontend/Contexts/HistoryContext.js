@@ -11,7 +11,6 @@ const HistoryContext = createContext();
 
 const HistoryProvider = ({ children }) => {
   const [historyVideos, setHistoryVideos] = useState([]);
-  console.log(historyVideos);
   const {
     auth: { authToken, status },
   } = useAuth();

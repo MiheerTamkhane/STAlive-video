@@ -21,6 +21,7 @@
   padding: 1rem;
   margin-top: 0;
   flex-direction: column-reverse;
+  gap: 1rem;
 }
 .other-pages-video-container > * {
   height: 100px;

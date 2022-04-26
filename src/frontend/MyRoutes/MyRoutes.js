@@ -12,11 +12,9 @@ import {
   LikedPage,
   SingleVideoPage,
 } from "../index";
+import { PlaylistVideosPage } from "../Pages";
 import Mockman from "mockman-js";
 const MyRoutes = () => {
-  const {
-    auth: { status },
-  } = useAuth();
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
@@ -58,6 +56,7 @@ const MyRoutes = () => {
 
       <Route path="/videos" element={<VideoListing />} />
       <Route path="/videos/:videoID" element={<SingleVideoPage />} />
+      <Route path="/playlist/:playlistId" element={<PlaylistVideosPage />} />
 
       <Route path="*" element={<Navigate to="/" replace />} />
       <Route path="/mock" element={<Mockman />} />

@@ -7,6 +7,7 @@ import {
   filterByDuration,
   filterBySorting,
   useFilter,
+  Modal,
 } from "../../index";
 import "./VideoListing.css";
 const VideoListing = () => {
@@ -24,7 +25,9 @@ const VideoListing = () => {
       <div className="videos-container">
         <Filter />
         {finalVideos.map((item) => (
-          <VideoCard key={item._id} data={item} />
+          <div key={item._id}>
+            <VideoCard key={item._id} data={item} />
+          </div>
         ))}
       </div>
     </>

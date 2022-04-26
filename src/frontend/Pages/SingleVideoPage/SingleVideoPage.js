@@ -4,20 +4,23 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import {
   useVideos,
   Sidebar,
+  Modal,
   ReactPlayerFrame,
   useAuth,
   useLikedVideos,
   useWatchLater,
-  useHistory,
   HorizontalCard,
+  numFormatter,
 } from "../../index";
 import "./SingleVideoPage.css";
 
 const SingleVideoPage = () => {
+  const [showModel, setShowModel] = useState(false);
   const { videos } = useVideos();
   const navigate = useNavigate();
-  const { addToHistoryHandler } = useHistory();
   const location = useLocation();
+  const { videoID } = useParams();
+
   const {
     auth: { authToken, status },
   } = useAuth();
@@ -29,7 +32,7 @@ const SingleVideoPage = () => {
     removeFromWatchLaterHandler,
   } = useWatchLater();
   const [singleVideo, setSingleVideo] = useState({});
-  const { videoID } = useParams();
+
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(`/api/video/${videoID}`);
@@ -37,18 +40,10 @@ const SingleVideoPage = () => {
     })();
   }, []);
 
-  function numFormatter(num) {
-    if (num > 999 && num < 1000000) {
-      return (num / 1000).toFixed(1) + "K";
-    } else if (num > 1000000) {
-      return (num / 1000000).toFixed(1) + "M";
-    } else if (num < 900) {
-      return num;
-    }
-  }
   return (
     <>
       <Sidebar />
+      {showModel && <Modal setShowModel={setShowModel} video={singleVideo} />}
       <div className="single-video-page">
         <div className="single-video-container">
           <ReactPlayerFrame
@@ -120,7 +115,16 @@ const SingleVideoPage = () => {
                 </button>
               )}
 
-              <button className="video-like-btn">
+              <button
+                className="video-like-btn"
+                onClick={() => {
+                  if (status) {
+                    setShowModel(true);
+                  } else {
+                    navigate("/join", { state: { from: location } });
+                  }
+                }}
+              >
                 <span className="material-icons-outlined">playlist_add</span>
                 <span className="video-btns-text">Add</span>
               </button>
@@ -129,13 +133,9 @@ const SingleVideoPage = () => {
           <p className="video-description">{singleVideo.description}</p>
         </div>
         <div className="watch-next-container">
-          {videos.map((item) => {
+          {videos.map((video) => {
             return (
-              <HorizontalCard
-                key={item._id}
-                data={item}
-                onSetSingleVideo={setSingleVideo}
-              />
+              <HorizontalCard key={video._id} data={video} showRemBtn={false} />
             );
           })}
         </div>
