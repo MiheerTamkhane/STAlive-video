@@ -5,6 +5,7 @@
 }
 .hero-container {
   background-color: rgba(0, 0, 0, 0.5);
+  margin-top: 6rem;
 }
 .hero-content {
   display: flex;
@@ -16,12 +17,12 @@
   color: var(--gray-100);
   padding: 0.5rem 1rem;
   max-width: 60rem;
-  margin: auto;
   height: 40rem;
+  margin: auto;
 }
 .hero-container h1 {
   color: var(--gray-100);
-  font-size: 4rem;
+  font-size: 3rem;
   padding: 0.5rem;
   letter-spacing: 0.1em;
 }
@@ -36,6 +37,7 @@
   background-color: var(--violet-500);
   transition: 250ms ease-in;
   color: var(--color-text);
+  text-decoration: none;
 }
 .main-cta:hover {
   background-color: var(--violet-700);

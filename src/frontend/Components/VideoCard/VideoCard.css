@@ -55,12 +55,13 @@
 }
 @media only screen and (max-width: 900px) {
   .video-card-container {
-    max-width: 22rem;
+    max-width: 26rem;
   }
 }
 @media only screen and (max-width: 700px) {
   .video-card-container {
     max-width: 80%;
     max-height: min-content;
+    margin: 0 auto;
   }
 }

@@ -21,7 +21,11 @@
 .logo h1 {
   font-size: 3.2rem;
   margin-left: 1rem;
+  font-weight: bolder;
+  font-family: "Square Peg", cursive;
+  letter-spacing: 1rem;
 }
+
 input.ct-input.search-input {
   display: flex;
   border: none;

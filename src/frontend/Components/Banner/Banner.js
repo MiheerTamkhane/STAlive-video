@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Banner.css";
-
+import { useAuth } from "../../index";
 const Banner = () => {
+  const {
+    auth: { status },
+  } = useAuth();
   return (
     <main className="hero">
       <div className="hero-container">
@@ -14,18 +17,16 @@ const Banner = () => {
             over the world possible.
           </p>
           <div className="banner-btns-div">
-            <button className="ct-btn ct-blue main-cta">
-              <Link to="/videos" className="banner-link">
-                Explore
-              </Link>
+            <Link to="/videos" className="ct-btn ct-blue main-cta">
+              <p>Explore</p>
               <span className="material-icons-outlined">video_library</span>
-            </button>
-            <button className="ct-btn main-cta">
-              <a href="#" className="banner-link">
-                Join Today
-              </a>
-              <span className="material-icons-outlined">chevron_right</span>
-            </button>
+            </Link>
+            {!status && (
+              <Link to="/join" className="ct-btn main-cta">
+                <p>Join Today</p>
+                <span className="material-icons-outlined">chevron_right</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
