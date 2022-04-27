@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav className="nav-bar navbar">
       <div className="ct-nav-logo">
         <div className="logo">
-          {location.pathname !== "/" && (
+          {location.pathname !== "/" && location.pathname !== "/join" && (
             <div className="sidebar-btn">
               {showSidebar ? (
                 <span
