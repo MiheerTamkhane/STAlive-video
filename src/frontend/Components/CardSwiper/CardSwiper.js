@@ -9,7 +9,8 @@ import SwiperCore, {
 import "swiper/swiper-bundle.min.css";
 import "./CardSwiper.css";
 
-import { SliderVideoCard, useVideos } from "../../index";
+import { useVideos } from "../../Contexts";
+import { SliderVideoCard } from "../SliderVideoCard/SliderVideoCard";
 SwiperCore.use([Autoplay, Navigation, Pagination, Controller, Thumbs]);
 const CardSwiper = () => {
   const { videos } = useVideos();

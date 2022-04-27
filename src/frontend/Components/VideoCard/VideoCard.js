@@ -1,13 +1,9 @@
 import { useState } from "react";
 import "./VideoCard.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import {
-  getThumbnailLink,
-  useAuth,
-  useLikedVideos,
-  useWatchLater,
-  Modal,
-} from "../../index";
+import { getThumbnailLink } from "../../Utils";
+import { useAuth, useLikedVideos, useWatchLater } from "../../Contexts";
+import { Modal } from "../Modal/Modal";
 const VideoCard = ({ data }) => {
   const navigate = useNavigate();
   const location = useLocation();

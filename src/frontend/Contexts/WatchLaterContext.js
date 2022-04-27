@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
-import { useAuth, addToWatchLater, removeFromWatchLater } from "../index";
+import { useAuth } from "./AuthContext";
+import { addToWatchLater, removeFromWatchLater } from "../Services";
 
 const WatchLaterContext = createContext();
 

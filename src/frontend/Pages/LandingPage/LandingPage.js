@@ -1,6 +1,5 @@
 import "./LandingPage.css";
-import { Banner, Poster, CardSwiper } from "../../index";
-
+import { Banner, Poster, CardSwiper } from "../../Components";
 const LandingPage = () => {
   const data = [
     {

@@ -1,11 +1,12 @@
 import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
+
+import { useAuth } from "./AuthContext";
 import {
-  useAuth,
   addToHistory,
   removeFromHistory,
   removeAllFromHistory,
-} from "../index";
+} from "../Services";
 
 const HistoryContext = createContext();
 

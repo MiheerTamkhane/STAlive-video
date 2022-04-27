@@ -1,4 +1,5 @@
-import { Sidebar, useLikedVideos, HorizontalCard } from "../../index";
+import { Sidebar, HorizontalCard } from "../../Components";
+import { useLikedVideos } from "../../Contexts";
 const LikedPage = () => {
   const { likedVideos, removeFromLikedVideosHandler } = useLikedVideos();
   return (

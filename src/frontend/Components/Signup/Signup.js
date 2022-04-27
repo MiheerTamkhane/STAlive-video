@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { useAuth, signupService } from "../../index";
+import { useAuth } from "../../Contexts";
+import { signupService } from "../../Services";
 import "../Login/Form.css";
 const Signup = () => {
   const { setAuth } = useAuth();

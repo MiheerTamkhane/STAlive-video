@@ -1,7 +1,8 @@
 import React from "react";
 import "./HorizontalCard.css";
 import { Link } from "react-router-dom";
-import { getThumbnailLink, useAuth } from "../../index";
+import { useAuth } from "../../Contexts";
+import { getThumbnailLink } from "../../Utils";
 const HorizontalCard = ({ data, onRemoveHandler, showRmvBtn }) => {
   const {
     auth: { authToken },

@@ -1,10 +1,7 @@
 import { useParams } from "react-router-dom";
-import {
-  Sidebar,
-  usePlaylists,
-  HorizontalCard,
-  removeVideoFromPlaylistService,
-} from "../../index";
+import { Sidebar, HorizontalCard } from "../../Components";
+import { usePlaylists } from "../../Contexts";
+import { removeVideoFromPlaylistService } from "../../Services";
 import "./PlaylistVideosPage.css";
 const PlaylistVideosPage = () => {
   const { playlists, setPlaylists } = usePlaylists();

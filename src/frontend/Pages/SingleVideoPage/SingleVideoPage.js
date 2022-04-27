@@ -1,17 +1,22 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
+
 import {
   useVideos,
-  Sidebar,
-  Modal,
-  ReactPlayerFrame,
   useAuth,
   useLikedVideos,
   useWatchLater,
+} from "../../Contexts";
+
+import {
+  Sidebar,
+  Modal,
+  ReactPlayerFrame,
   HorizontalCard,
-  numFormatter,
-} from "../../index";
+} from "../../Components";
+
+import { numFormatter } from "../../Utils";
 import "./SingleVideoPage.css";
 
 const SingleVideoPage = () => {

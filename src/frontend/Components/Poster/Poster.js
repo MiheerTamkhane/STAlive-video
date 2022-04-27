@@ -1,5 +1,5 @@
 import React from "react";
-import { getThumbnailLink } from "../../Utils/getThumbnailLink";
+import { getThumbnailLink } from "../../Utils";
 import "./Poster.css";
 import { Link } from "react-router-dom";
 

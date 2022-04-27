@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { filterReducerFunction } from "../index";
+import { filterReducerFunction } from "../Reducers";
 
 const FilterContext = createContext();
 

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
+import { useAuth, usePlaylists } from "../../Contexts";
 import {
+  deletePlaylistService,
   addToPlaylistsService,
-  useAuth,
-  usePlaylists,
   addVideoToPlaylistService,
   removeVideoFromPlaylistService,
-} from "../../index";
-import { deletePlaylistService } from "../../Services";
+} from "../../Services";
 import "./Modal.css";
 const Modal = ({ setShowModel, video }) => {
   const {
