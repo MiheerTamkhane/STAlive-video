@@ -3,7 +3,7 @@
   margin-top: 7.5rem;
   display: flex;
   flex-wrap: wrap;
-  align-self: flex-start;
+  align-self: center;
   justify-content: space-around;
 }
 .page-text {

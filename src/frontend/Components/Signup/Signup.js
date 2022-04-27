@@ -7,6 +7,7 @@ const Signup = () => {
   const { setAuth } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+
   let from = location.state?.from?.pathname || "/";
   const [userSignup, setUserSignup] = useState({
     firstName: "",

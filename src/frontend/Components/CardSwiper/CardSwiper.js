@@ -13,13 +13,24 @@ import { SliderVideoCard, useVideos } from "../../index";
 SwiperCore.use([Autoplay, Navigation, Pagination, Controller, Thumbs]);
 const CardSwiper = () => {
   const { videos } = useVideos();
+
   return (
     <div className="card-swiper-container">
       <Swiper
         navigation
         pagination={{ clickable: true }}
         spaceBetween={20}
-        slidesPerView={4}
+        breakpoints={{
+          440: {
+            width: 440,
+            slidesPerView: 1,
+          },
+          768: {
+            width: 768,
+            slidesPerView: 2,
+          },
+        }}
+        autoplay
       >
         {videos.map((item) => {
           return (
