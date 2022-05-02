@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Login, Signup } from "../../index";
+import { Login, Signup } from "../../Components";
 import "./SigninPage.css";
 const SigninPage = () => {
   const [loginSignup, setLoginSignup] = useState();

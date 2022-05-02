@@ -1,18 +1,17 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
+import { ProtectedRoute } from "./ProtectedRoute";
 import {
-  ProtectedRoute,
+  PlaylistVideosPage,
   LandingPage,
   SigninPage,
-  useAuth,
   VideoListing,
   PlaylistPage,
   HistoryPage,
   WatchlaterPage,
   LikedPage,
   SingleVideoPage,
-} from "../index";
-import { PlaylistVideosPage } from "../Pages";
+} from "../Pages";
 import Mockman from "mockman-js";
 const MyRoutes = () => {
   return (

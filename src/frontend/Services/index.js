@@ -1,3 +1,14 @@
 export { getSinglePlaylistService } from "./PlaylistServices/getSinglePlaylistService";
-
 export { deletePlaylistService } from "./PlaylistServices/deletePlaylistService";
+export { signupService } from "./AuthServices/signupSerivice";
+export { loginService } from "./AuthServices/loginService";
+export { addToLikedVideos } from "./LikeServices/addToLikedVideos";
+export { removeFromLikedVideos } from "./LikeServices/removeFromLikedVideos";
+export { addToWatchLater } from "./WatchLaterServices/addToWatchLater";
+export { removeFromWatchLater } from "./WatchLaterServices/removeFromWatchLater";
+export { addToHistory } from "./HistoryServices/addToHistory";
+export { removeFromHistory } from "./HistoryServices/removeFromHistory";
+export { removeAllFromHistory } from "./HistoryServices/removeAllFromHistory";
+export { addToPlaylistsService } from "./PlaylistServices/addToPlaylistsService";
+export { addVideoToPlaylistService } from "./PlaylistServices/addVideoToPlaylistService";
+export { removeVideoFromPlaylistService } from "./PlaylistServices/removeVideoFromPlaylistService";

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useState, useEffect } from "react";
-import { useAuth, addToLikedVideos, removeFromLikedVideos } from "../index";
+import { useAuth } from "./AuthContext";
+import { addToLikedVideos, removeFromLikedVideos } from "../Services";
 
 const LikeContext = createContext();
 

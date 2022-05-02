@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import { Sidebar, usePlaylists, getThumbnailLink, useAuth } from "../../index";
+import { Sidebar } from "../../Components";
+import { usePlaylists, useAuth } from "../../Contexts";
+import { getThumbnailLink } from "../../Utils";
 import { deletePlaylistService } from "../../Services";
 import "./PlaylistPage.css";
 const PlaylistPage = () => {

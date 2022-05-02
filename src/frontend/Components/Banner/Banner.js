@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Banner.css";
-import { useAuth } from "../../index";
+import { useAuth } from "../../Contexts";
 const Banner = () => {
   const {
     auth: { status },

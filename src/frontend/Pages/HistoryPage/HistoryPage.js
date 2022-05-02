@@ -1,4 +1,5 @@
-import { Sidebar, useHistory, HorizontalCard, useAuth } from "../../index";
+import { Sidebar, HorizontalCard } from "../../Components";
+import { useHistory, useAuth } from "../../Contexts";
 import "./HistoryPage.css";
 const HistoryPage = () => {
   const {

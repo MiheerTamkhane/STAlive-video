@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
-import { useNav } from "../../index";
+import { useNav } from "../../Contexts";
 export const Sidebar = () => {
   const { showSidebar } = useNav();
   const getStyled = ({ isActive }) => {

@@ -1,6 +1,7 @@
 .videos-container {
   margin-left: 20rem;
   margin-top: 7.5rem;
+  min-height: 80vh;
   display: flex;
   flex-wrap: wrap;
   align-self: center;

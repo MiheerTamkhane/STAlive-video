@@ -1,14 +1,6 @@
-import {
-  Sidebar,
-  useVideos,
-  VideoCard,
-  Filter,
-  filterByTopics,
-  filterByDuration,
-  filterBySorting,
-  useFilter,
-  Modal,
-} from "../../index";
+import { Sidebar, Filter, VideoCard } from "../../Components";
+import { useVideos, useFilter } from "../../Contexts";
+import { filterByTopics, filterByDuration, filterBySorting } from "../../Utils";
 import "./VideoListing.css";
 const VideoListing = () => {
   const { videos } = useVideos();

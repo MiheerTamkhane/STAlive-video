@@ -1,9 +1,11 @@
-import { Header, MyRoutes } from "./frontend/index";
+import { MyRoutes } from "./frontend/MyRoutes";
+import { Navbar, Footer } from "./frontend/Components";
 function App() {
   return (
     <div className="app">
-      <Header />
+      <Navbar />
       <MyRoutes />
+      <Footer />
     </div>
   );
 }

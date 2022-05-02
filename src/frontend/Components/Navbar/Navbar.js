@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { useAuth, useNav } from "../../index";
+import { useAuth, useNav } from "../../Contexts";
 import "./Navbar.css";
 const Navbar = () => {
   const [isSearch, setIsSearch] = useState(false);

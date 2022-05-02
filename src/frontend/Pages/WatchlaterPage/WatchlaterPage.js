@@ -1,4 +1,5 @@
-import { Sidebar, HorizontalCard, useWatchLater } from "../../index";
+import { Sidebar, HorizontalCard } from "../../Components";
+import { useWatchLater } from "../../Contexts";
 const WatchlaterPage = () => {
   const { watchLaterVideos, removeFromWatchLaterHandler } = useWatchLater();
   return (

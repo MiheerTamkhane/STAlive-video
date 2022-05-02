@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useAuth, loginService } from "../../index";
+import { useAuth } from "../../Contexts";
+import { loginService } from "../../Services";
 import "./Form.css";
 const Login = () => {
   const [userLogin, setUserLogin] = useState({

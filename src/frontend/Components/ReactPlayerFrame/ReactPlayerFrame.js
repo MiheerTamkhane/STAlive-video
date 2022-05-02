@@ -1,7 +1,8 @@
 import React from "react";
 import "./ReactPlayerFrame.css";
 import ReactPlayer from "react-player";
-import { getVideoLink, useHistory } from "../../index";
+import { getVideoLink } from "../../Utils";
+import { useHistory } from "../../Contexts";
 const ReactPlayerFrame = ({ id, authToken, currentVideo }) => {
   const { addToHistoryHandler } = useHistory();
   return (

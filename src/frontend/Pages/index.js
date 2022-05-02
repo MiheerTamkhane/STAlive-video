@@ -1,1 +1,9 @@
 export { PlaylistVideosPage } from "./PlaylistVideosPage/PlaylistVideosPage";
+export { LandingPage } from "./LandingPage/LandingPage";
+export { SigninPage } from "./SigninPage/SigninPage";
+export { VideoListing } from "./VideoListing/VideoListing";
+export { PlaylistPage } from "./PlaylistPage/PlaylistPage";
+export { HistoryPage } from "./HistoryPage/HistoryPage";
+export { LikedPage } from "./LikedPage/LikedPage";
+export { WatchlaterPage } from "./WatchlaterPage/WatchlaterPage";
+export { SingleVideoPage } from "./SingleVideoPage/SingleVideoPage";
