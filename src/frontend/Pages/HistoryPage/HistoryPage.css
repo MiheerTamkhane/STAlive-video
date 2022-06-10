@@ -5,3 +5,18 @@
   color: var(--color-primary);
   background-color: var(--secondary-bg);
 }
+.history-container {
+  width: 100%;
+  margin-left: 22rem;
+  min-height: 80vh;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 900px) {
+  .history-container {
+    margin-left: 0rem;
+    margin-top: 0rem;
+    margin: 1rem;
+  }
+}

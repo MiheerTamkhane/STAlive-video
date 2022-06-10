@@ -74,12 +74,12 @@ const Login = () => {
           onClick={(e) => {
             e.preventDefault();
             setUserLogin({
-              email: "adarshbalika@gmail.com",
-              password: "adarshBalika123",
+              email: "miheer007@gmail.com",
+              password: "miheer123",
             });
             loginHandler({
-              email: "adarshbalika@gmail.com",
-              password: "adarshBalika123",
+              email: "miheer007@gmail.com",
+              password: "miheer123",
             });
           }}
         >

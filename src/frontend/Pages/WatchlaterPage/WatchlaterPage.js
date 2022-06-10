@@ -1,5 +1,6 @@
 import { Sidebar, HorizontalCard } from "../../Components";
 import { useWatchLater } from "../../Contexts";
+import "./WatchlaterPage.css";
 const WatchlaterPage = () => {
   const { watchLaterVideos, removeFromWatchLaterHandler } = useWatchLater();
   return (
@@ -8,7 +9,7 @@ const WatchlaterPage = () => {
       <div className="page-text">
         <h1>Watch Later</h1>
       </div>
-      <div className="videos-container other-pages-video-container">
+      <div className="watch-later-container">
         {watchLaterVideos.map((item) => (
           <HorizontalCard
             key={item._id}

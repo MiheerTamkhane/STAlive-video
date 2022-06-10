@@ -2,8 +2,8 @@
   padding: 1rem;
   margin-top: 0;
   flex-direction: row-reverse;
-  align-items: center;
-  grid-gap: 1rem;
+  justify-content: flex-end;
+  align-items: flex-start;
   gap: 1rem;
 }
 
