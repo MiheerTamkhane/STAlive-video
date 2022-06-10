@@ -1,10 +1,10 @@
-# 3am Video Library for Awesome Music
+# STAlive video library for best motivational videos
 
 ---
 
 ## Quick Start
 
-Preview Link : https://3am-music.netlify.app/
+Preview Link : https://stalive.netlify.app/
 
 ## Run Locally
 
