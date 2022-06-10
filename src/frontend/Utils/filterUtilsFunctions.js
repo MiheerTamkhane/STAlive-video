@@ -53,17 +53,4 @@ const filterBySorting = (state, videos) => {
   }
 };
 
-const filterBySearch = (state, videos) => {
-  console.log(state);
-  // if (state.searchInput !== "") {
-  //   //   return videos.filter((video) => video.title.includes(state.searchInput));
-  //   return videos.filter((video) =>
-  //     video.title.toUpperCase().includes(searchedText.trim().toUpperCase())
-  //   );
-  // } else {
-  //   videos;
-  // }
-  // return videos;
-};
-
-export { filterByTopics, filterByDuration, filterBySorting, filterBySearch };
+export { filterByTopics, filterByDuration, filterBySorting };
