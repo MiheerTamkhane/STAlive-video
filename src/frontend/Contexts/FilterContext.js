@@ -8,6 +8,7 @@ const FilterProvider = ({ children }) => {
     sortBy: "newest",
     topic: "",
     duration: "",
+    searchInput: "",
   });
   return (
     <FilterContext.Provider value={{ state, dispatch }}>
