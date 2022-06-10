@@ -4,6 +4,5 @@ export {
   filterByTopics,
   filterByDuration,
   filterBySorting,
-  filterBySearch,
 } from "./filterUtilsFunctions";
 export { numFormatter } from "./numFormatter";
