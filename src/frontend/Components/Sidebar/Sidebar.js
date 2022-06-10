@@ -1,11 +1,15 @@
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 import { useNav } from "../../Contexts";
+import { useOnClickOutside } from "../../hooks";
 export const Sidebar = () => {
-  const { showSidebar } = useNav();
+  const { showSidebar, setShowSidebar } = useNav();
   const getStyled = ({ isActive }) => {
     return isActive ? "sidebar-items active" : "sidebar-items";
   };
+  const sidebarRef = useRef();
+  useOnClickOutside(sidebarRef, () => setShowSidebar(false));
   return (
     <div
       className={
@@ -17,7 +21,7 @@ export const Sidebar = () => {
           showSidebar ? "sidebar-container show-sidebar" : "sidebar-container"
         }
       >
-        <ul className="sidebar-list">
+        <ul className="sidebar-list" ref={sidebarRef}>
           <NavLink to="/" className={getStyled}>
             <span className="material-icons">home</span>
             <span>HOME</span>
