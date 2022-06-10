@@ -1,6 +1,11 @@
 import { Sidebar, Filter, VideoCard } from "../../Components";
 import { useVideos, useFilter } from "../../Contexts";
-import { filterByTopics, filterByDuration, filterBySorting } from "../../Utils";
+import {
+  filterByTopics,
+  filterByDuration,
+  filterBySorting,
+  filterBySearch,
+} from "../../Utils";
 import "./VideoListing.css";
 const VideoListing = () => {
   const { videos } = useVideos();
@@ -11,6 +16,8 @@ const VideoListing = () => {
     videosFilteredByTopics
   );
   const finalVideos = filterBySorting(state, videosFilteredbyDuration);
+  const finalVideossss = filterBySearch(state, videos);
+  console.log(finalVideossss);
   return (
     <>
       <Sidebar />

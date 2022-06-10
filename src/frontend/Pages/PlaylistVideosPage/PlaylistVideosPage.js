@@ -29,7 +29,7 @@ const PlaylistVideosPage = () => {
           );
         })}
       </div>
-      <div className="videos-container other-pages-video-container">
+      <div className="playlist-videos-container">
         {playlists.map((playlist) => {
           return (
             playlist._id === playlistId &&

@@ -1,4 +1,5 @@
 export const filterReducerFunction = (state, action) => {
+  console.log(action.type);
   switch (action.type) {
     case "SORT_BY":
       return { ...state, sortBy: action.payload };

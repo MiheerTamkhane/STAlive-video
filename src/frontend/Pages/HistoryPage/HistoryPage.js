@@ -18,7 +18,7 @@ const HistoryPage = () => {
           Clear History
         </button>
       </div>
-      <div className="videos-container">
+      <div className="history-container">
         {historyVideos.map((item) => (
           <HorizontalCard key={item._id} data={item} />
         ))}

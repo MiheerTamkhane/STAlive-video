@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useAuth, useNav } from "../../Contexts";
+
 import "./Navbar.css";
 const Navbar = () => {
   const [isSearch, setIsSearch] = useState(false);
@@ -10,6 +11,7 @@ const Navbar = () => {
     logoutHandler,
   } = useAuth();
   const { showSidebar, setShowSidebar } = useNav();
+
   return (
     <nav className="nav-bar navbar">
       <div className="ct-nav-logo">

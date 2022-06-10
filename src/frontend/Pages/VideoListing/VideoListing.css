@@ -18,20 +18,7 @@
   color: var(--color-text);
   gap: 1rem;
 }
-.other-pages-video-container {
-  padding: 1rem;
-  margin-top: 0;
-  flex-direction: column-reverse;
-  gap: 1rem;
-}
-.other-pages-video-container > * {
-  height: 100px;
-}
-.other-pages-video-container h1 {
-  font-size: 2.8rem;
-  color: var(--color-text);
-  margin-bottom: 1rem;
-}
+
 @media only screen and (max-width: 900px) {
   .videos-container {
     margin-top: 7.5rem;
