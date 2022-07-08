@@ -43,7 +43,7 @@ const SingleVideoPage = () => {
       const { data } = await axios.get(`/api/video/${videoID}`);
       setSingleVideo(data.video);
     })();
-  }, []);
+  }, [videoID]);
 
   return (
     <>

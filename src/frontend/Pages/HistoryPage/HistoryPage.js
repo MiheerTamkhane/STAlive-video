@@ -5,7 +5,11 @@ const HistoryPage = () => {
   const {
     auth: { authToken },
   } = useAuth();
-  const { historyVideos, removeAllFromHistoryHandler } = useHistory();
+  const {
+    historyVideos,
+    removeAllFromHistoryHandler,
+    removeFromHistoryHandler,
+  } = useHistory();
   return (
     <>
       <Sidebar />
@@ -20,7 +24,12 @@ const HistoryPage = () => {
       </div>
       <div className="history-container">
         {historyVideos.map((item) => (
-          <HorizontalCard key={item._id} data={item} />
+          <HorizontalCard
+            key={item._id}
+            data={item}
+            onRemoveHandler={removeFromHistoryHandler}
+            showRmvBtn={true}
+          />
         ))}
       </div>
     </>

@@ -88,7 +88,7 @@ const Signup = () => {
         {/* <input type="checkbox" id="checkbox" required />
         <label htmlFor="checkbox">Terms & Conditions.</label> */}
         <label htmlFor="checkbox" className="form-check-input">
-          <input type="checkbox" id="checkbox" />
+          <input type="checkbox" id="checkbox" required />
           <span>Terms & Conditions.</span>
         </label>
       </div>
