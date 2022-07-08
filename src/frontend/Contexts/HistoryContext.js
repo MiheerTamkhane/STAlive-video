@@ -41,7 +41,7 @@ const HistoryProvider = ({ children }) => {
   };
   const removeAllFromHistoryHandler = async (authToken) => {
     const data = await removeAllFromHistory(authToken);
-    setHistoryVideos(() => data);
+    setHistoryVideos(data);
   };
 
   const addToHistoryHandler = async (authToken, video) => {
