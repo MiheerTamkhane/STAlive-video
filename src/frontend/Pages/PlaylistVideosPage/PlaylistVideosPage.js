@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+
 import { Sidebar, HorizontalCard } from "../../Components";
 import { usePlaylists } from "../../Contexts";
 import { removeVideoFromPlaylistService } from "../../Services";

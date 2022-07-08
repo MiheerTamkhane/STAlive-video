@@ -1,8 +1,13 @@
-import { useState } from "react";
 import "./VideoCard.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 import { getThumbnailLink } from "../../Utils";
-import { useAuth, useLikedVideos, useWatchLater } from "../../Contexts";
+import {
+  useAuth,
+  useLikedVideos,
+  useWatchLater,
+  usePlaylists,
+} from "../../Contexts";
 import { Modal } from "../Modal/Modal";
 const VideoCard = ({ data }) => {
   const navigate = useNavigate();
@@ -19,10 +24,11 @@ const VideoCard = ({ data }) => {
     addToWatchLaterHandler,
     removeFromWatchLaterHandler,
   } = useWatchLater();
-  const [showModel, setShowModel] = useState(false);
+
+  const { showModal, setShowModal } = usePlaylists();
   return (
     <>
-      {showModel && <Modal setShowModel={setShowModel} video={data} />}
+      {showModal && <Modal video={data} />}
       <div className="video-card-container">
         <Link to={`/videos/${_id}`} className="video-card-link">
           <div className="video-card-img">
@@ -43,6 +49,11 @@ const VideoCard = ({ data }) => {
               className="material-icons"
               onClick={() => {
                 removeFromLikedVideosHandler(authToken, _id);
+                toast.success("Remove from likes!", {
+                  style: {
+                    fontSize: "16px",
+                  },
+                });
               }}
             >
               favorite
@@ -53,6 +64,11 @@ const VideoCard = ({ data }) => {
               onClick={() => {
                 if (status) {
                   addToLikedVideosHandler(authToken, data);
+                  toast.success("Liked a video!", {
+                    style: {
+                      fontSize: "16px",
+                    },
+                  });
                 } else {
                   navigate("/join", { state: { from: location } });
                 }
@@ -66,6 +82,11 @@ const VideoCard = ({ data }) => {
               className="material-icons"
               onClick={() => {
                 removeFromWatchLaterHandler(authToken, _id);
+                toast.success("Remove from watchlater!", {
+                  style: {
+                    fontSize: "16px",
+                  },
+                });
               }}
             >
               watch_later
@@ -76,6 +97,11 @@ const VideoCard = ({ data }) => {
               onClick={() => {
                 if (status) {
                   addToWatchLaterHandler(authToken, data);
+                  toast.success("Added to watchlater!", {
+                    style: {
+                      fontSize: "16px",
+                    },
+                  });
                 } else {
                   navigate("/join", { state: { from: location } });
                 }
@@ -88,7 +114,7 @@ const VideoCard = ({ data }) => {
             className="material-icons-outlined"
             onClick={() => {
               if (status) {
-                setShowModel(true);
+                setShowModal(true);
               } else {
                 navigate("/join", { state: { from: location } });
               }

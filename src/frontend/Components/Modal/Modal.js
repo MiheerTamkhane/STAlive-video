@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import toast from "react-hot-toast";
 import { useAuth, usePlaylists } from "../../Contexts";
+import { useOnClickOutside } from "../../hooks";
 import {
   deletePlaylistService,
   addToPlaylistsService,
@@ -7,11 +9,11 @@ import {
   removeVideoFromPlaylistService,
 } from "../../Services";
 import "./Modal.css";
-const Modal = ({ setShowModel, video }) => {
+const Modal = ({ video }) => {
   const {
     auth: { authToken },
   } = useAuth();
-  const { playlists, setPlaylists } = usePlaylists();
+  const { playlists, setPlaylists, setShowModal } = usePlaylists();
   const [showForm, setShowForm] = useState(false);
   const [currentPlaylist, setCurrentPlaylist] = useState({
     title: "",
@@ -24,6 +26,11 @@ const Modal = ({ setShowModel, video }) => {
     setCurrentPlaylist({
       title: "",
       description: "",
+    });
+    toast.success("Playlist created!", {
+      style: {
+        fontSize: "16px",
+      },
     });
   };
 
@@ -49,8 +56,15 @@ const Modal = ({ setShowModel, video }) => {
     const newPlaylists = await deletePlaylistService(authToken, playlistId);
 
     setPlaylists(newPlaylists);
+    toast.success("Playlist removed!", {
+      style: {
+        fontSize: "16px",
+      },
+    });
   };
-
+  const modalRef = useRef();
+  useOnClickOutside(modalRef, () => setShowModal(false));
+  //  ref={modalRef}
   return (
     <div className="modal-background-container">
       <div className="playlist-modal-container">
@@ -58,7 +72,7 @@ const Modal = ({ setShowModel, video }) => {
           <h1>Save to...</h1>
           <span
             className="material-icons close-model"
-            onClick={() => setShowModel(false)}
+            onClick={() => setShowModal(false)}
           >
             close
           </span>

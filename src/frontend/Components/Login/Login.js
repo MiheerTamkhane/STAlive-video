@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 import { useAuth } from "../../Contexts";
 import { loginService } from "../../Services";
 import "./Form.css";
@@ -22,6 +23,11 @@ const Login = () => {
       authToken: data.encodedToken,
     }));
     navigate(from, { replace: true });
+    toast.success("Loggedin successfully!", {
+      style: {
+        fontSize: "16px",
+      },
+    });
   };
   return (
     <main className="form-container">

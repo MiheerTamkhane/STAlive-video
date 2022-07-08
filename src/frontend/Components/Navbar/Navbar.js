@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 import { useAuth, useNav } from "../../Contexts";
 
 import "./Navbar.css";
@@ -53,7 +54,17 @@ const Navbar = () => {
                 <button className="dropdown-item">
                   <h4>Hi, {user}</h4>
                 </button>
-                <button className="dropdown-item" onClick={logoutHandler}>
+                <button
+                  className="dropdown-item"
+                  onClick={() => {
+                    logoutHandler();
+                    toast.success("Logged Out!", {
+                      style: {
+                        fontSize: "16px",
+                      },
+                    });
+                  }}
+                >
                   <p>Logout</p>
                   <span className="material-icons-outlined">logout</span>
                 </button>

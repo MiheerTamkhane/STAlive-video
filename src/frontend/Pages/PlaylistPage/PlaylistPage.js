@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 import { Sidebar } from "../../Components";
 import { usePlaylists, useAuth } from "../../Contexts";
 import { getThumbnailLink } from "../../Utils";
@@ -25,7 +26,14 @@ const PlaylistPage = () => {
             <div key={playlist._id} className="playlist-card">
               <button
                 className="material-icons-outlined delete-btn ct-btn ct-red"
-                onClick={() => deletePlaylistHandler(playlist._id)}
+                onClick={() => {
+                  deletePlaylistHandler(playlist._id);
+                  toast.success("Playlist deleted!", {
+                    style: {
+                      fontSize: "16px",
+                    },
+                  });
+                }}
               >
                 delete
               </button>
