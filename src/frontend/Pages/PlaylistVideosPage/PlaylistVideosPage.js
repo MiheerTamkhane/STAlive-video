@@ -7,7 +7,6 @@ import "./PlaylistVideosPage.css";
 const PlaylistVideosPage = () => {
   const { playlists, setPlaylists } = usePlaylists();
   const { playlistId } = useParams();
-
   const removeVideoFromPlaylistHandler = async (authToken, vodeoId) => {
     const data = await removeVideoFromPlaylistService(
       authToken,

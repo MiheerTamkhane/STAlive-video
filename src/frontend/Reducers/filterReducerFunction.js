@@ -6,6 +6,8 @@ export const filterReducerFunction = (state, action) => {
       return { ...state, topic: action.payload };
     case "BY_TIME":
       return { ...state, duration: action.payload };
+    case "BY_SEARCH":
+      return state;
     default:
       return state;
   }

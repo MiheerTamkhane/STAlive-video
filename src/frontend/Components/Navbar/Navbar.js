@@ -1,18 +1,36 @@
 import { useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Navigate, NavLink, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useAuth, useNav } from "../../Contexts";
+import { useAuth, useNav, useVideos, useFilter } from "../../Contexts";
 
 import "./Navbar.css";
 const Navbar = () => {
   const [isSearch, setIsSearch] = useState(false);
+  const { setSearchInput } = useVideos();
+  const { dispatch } = useFilter();
   const location = useLocation();
+  const navigate = useNavigate();
   const {
     auth: { status, user },
     logoutHandler,
   } = useAuth();
   const { showSidebar, setShowSidebar } = useNav();
 
+  const searchProcess = (e) => {
+    navigate("/videos");
+    dispatch({ type: "BY_SEARCH" });
+    setSearchInput(e.target.value);
+  };
+
+  const debounce = (callback, delay) => {
+    let timeout = null;
+    return (...args) => {
+      clearInterval(timeout);
+      timeout = setTimeout(() => callback.apply(this, args), delay);
+    };
+  };
+
+  const searchHandler = debounce(searchProcess, 500);
   return (
     <nav className="nav-bar navbar">
       <div className="ct-nav-logo">
@@ -75,6 +93,7 @@ const Navbar = () => {
             <div className="ct-nav-icons search-container">
               <input
                 type="text"
+                onChange={searchHandler}
                 className={isSearch ? "ct-input search-input" : "ct-input hide"}
                 placeholder="Type to search"
               />

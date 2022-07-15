@@ -5,6 +5,7 @@ const VideosContext = createContext();
 
 const VideosProvider = ({ children }) => {
   const [videos, setVideos] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
   useEffect(() => {
     (async () => {
       try {
@@ -17,7 +18,9 @@ const VideosProvider = ({ children }) => {
     })();
   }, []);
   return (
-    <VideosContext.Provider value={{ videos, setVideos }}>
+    <VideosContext.Provider
+      value={{ videos, setVideos, searchInput, setSearchInput }}
+    >
       {children}
     </VideosContext.Provider>
   );
