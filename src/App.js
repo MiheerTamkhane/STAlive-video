@@ -8,7 +8,7 @@ function App() {
       <MyRoutes />
       <Footer />
       <Toaster
-        position="top-right"
+        position="bottom-right"
         toastOptions={{
           style: {
             background: "#6d28d9",
