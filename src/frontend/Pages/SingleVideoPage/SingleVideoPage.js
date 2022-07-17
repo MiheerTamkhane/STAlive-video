@@ -20,7 +20,7 @@ import { numFormatter } from "../../Utils";
 import "./SingleVideoPage.css";
 
 const SingleVideoPage = () => {
-  const [showModel, setShowModel] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   const { videos } = useVideos();
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,7 +48,12 @@ const SingleVideoPage = () => {
   return (
     <>
       <Sidebar />
-      {showModel && <Modal setShowModel={setShowModel} video={singleVideo} />}
+      {showModal && (
+        <Modal
+          setShowModalClose={() => setShowModal(false)}
+          video={singleVideo}
+        />
+      )}
       <div className="single-video-page">
         <div className="single-video-container">
           <ReactPlayerFrame
@@ -124,7 +129,7 @@ const SingleVideoPage = () => {
                 className="video-like-btn"
                 onClick={() => {
                   if (status) {
-                    setShowModel(true);
+                    setShowModal(true);
                   } else {
                     navigate("/join", { state: { from: location } });
                   }

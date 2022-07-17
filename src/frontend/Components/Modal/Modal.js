@@ -9,15 +9,24 @@ import {
   removeVideoFromPlaylistService,
 } from "../../Services";
 import "./Modal.css";
-const Modal = ({ video }) => {
+const Modal = ({ video, setShowModalClose }) => {
+  const modalRef = useRef();
   const {
     auth: { authToken },
   } = useAuth();
-  const { playlists, setPlaylists, setShowModal } = usePlaylists();
+  const { playlists, setPlaylists } = usePlaylists();
   const [showForm, setShowForm] = useState(false);
   const [currentPlaylist, setCurrentPlaylist] = useState({
     title: "",
     description: "",
+  });
+
+  useOnClickOutside(modalRef, () => {
+    setCurrentPlaylist({
+      title: "",
+      description: "",
+    });
+    setShowModalClose();
   });
 
   const submitPlaylistHandler = async (authToken, currentPlaylist) => {
@@ -62,17 +71,18 @@ const Modal = ({ video }) => {
       },
     });
   };
-  const modalRef = useRef();
-  useOnClickOutside(modalRef, () => setShowModal(false));
-  //  ref={modalRef}
+
   return (
-    <div className="modal-background-container">
-      <div className="playlist-modal-container">
+    <div
+      className="modal-background-container"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="playlist-modal-container" ref={modalRef}>
         <div className="title-and-close">
-          <h1>Save to...</h1>
+          <h2>Save to...</h2>
           <span
             className="material-icons close-model"
-            onClick={() => setShowModal(false)}
+            onClick={setShowModalClose}
           >
             close
           </span>

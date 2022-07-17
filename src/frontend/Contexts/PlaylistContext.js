@@ -4,11 +4,8 @@ const PlaylistsContext = createContext();
 
 const PlaylistsProvider = ({ children }) => {
   const [playlists, setPlaylists] = useState([]);
-  const [showModal, setShowModal] = useState(false);
   return (
-    <PlaylistsContext.Provider
-      value={{ playlists, setPlaylists, showModal, setShowModal }}
-    >
+    <PlaylistsContext.Provider value={{ playlists, setPlaylists }}>
       {children}
     </PlaylistsContext.Provider>
   );
