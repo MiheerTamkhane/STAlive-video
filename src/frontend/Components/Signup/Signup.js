@@ -1,6 +1,6 @@
-import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 import { useAuth } from "../../Contexts";
 import { signupService } from "../../Services";
 import "../Login/Form.css";
@@ -25,6 +25,11 @@ const Signup = () => {
       authToken: data.encodedToken,
     }));
     navigate(from, { replace: true });
+    toast.success("Signin successfully!", {
+      style: {
+        fontSize: "16px",
+      },
+    });
   };
   return (
     <form

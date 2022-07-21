@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+
 import { Sidebar, HorizontalCard } from "../../Components";
 import { usePlaylists } from "../../Contexts";
 import { removeVideoFromPlaylistService } from "../../Services";
@@ -6,7 +7,6 @@ import "./PlaylistVideosPage.css";
 const PlaylistVideosPage = () => {
   const { playlists, setPlaylists } = usePlaylists();
   const { playlistId } = useParams();
-
   const removeVideoFromPlaylistHandler = async (authToken, vodeoId) => {
     const data = await removeVideoFromPlaylistService(
       authToken,

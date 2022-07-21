@@ -1,5 +1,5 @@
-import React from "react";
 import "./HorizontalCard.css";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../Contexts";
 import { getThumbnailLink } from "../../Utils";
@@ -26,7 +26,14 @@ const HorizontalCard = ({ data, onRemoveHandler, showRmvBtn }) => {
       {showRmvBtn && (
         <button
           className="material-icons-outlined delete-btn ct-btn ct-red"
-          onClick={() => onRemoveHandler(authToken, _id)}
+          onClick={() => {
+            onRemoveHandler(authToken, _id);
+            toast.success("Video removed successfully!", {
+              style: {
+                fontSize: "16px",
+              },
+            });
+          }}
         >
           delete
         </button>

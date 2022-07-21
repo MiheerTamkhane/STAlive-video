@@ -1,9 +1,13 @@
 .video-card-container {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   max-width: 26rem;
+  min-height: 26rem;
+  max-height: 26rem;
   cursor: pointer;
   background-color: var(--color-body-bg);
   position: relative;
+  box-shadow: 0px 5px 5px rgb(0 0 0 / 45%);
+  border-radius: 7px;
 }
 .video-card-link {
   text-decoration: none;

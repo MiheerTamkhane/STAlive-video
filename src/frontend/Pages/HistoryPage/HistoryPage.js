@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { Sidebar, HorizontalCard } from "../../Components";
 import { useHistory, useAuth } from "../../Contexts";
 import "./HistoryPage.css";
@@ -17,7 +18,14 @@ const HistoryPage = () => {
         <h1>Your History</h1>
         <button
           className="ct-nav-icons ct-btn clear-history-btn"
-          onClick={() => removeAllFromHistoryHandler(authToken)}
+          onClick={() => {
+            removeAllFromHistoryHandler(authToken);
+            toast.success("History cleared!", {
+              style: {
+                fontSize: "16px",
+              },
+            });
+          }}
         >
           Clear History
         </button>

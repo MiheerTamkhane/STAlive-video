@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import toast from "react-hot-toast";
 import { useAuth, usePlaylists } from "../../Contexts";
+import { useOnClickOutside } from "../../hooks";
 import {
   deletePlaylistService,
   addToPlaylistsService,
@@ -7,7 +9,8 @@ import {
   removeVideoFromPlaylistService,
 } from "../../Services";
 import "./Modal.css";
-const Modal = ({ setShowModel, video }) => {
+const Modal = ({ video, setShowModalClose }) => {
+  const modalRef = useRef();
   const {
     auth: { authToken },
   } = useAuth();
@@ -18,12 +21,25 @@ const Modal = ({ setShowModel, video }) => {
     description: "",
   });
 
+  useOnClickOutside(modalRef, () => {
+    setCurrentPlaylist({
+      title: "",
+      description: "",
+    });
+    setShowModalClose();
+  });
+
   const submitPlaylistHandler = async (authToken, currentPlaylist) => {
     const data = await addToPlaylistsService(authToken, currentPlaylist);
     setPlaylists(data);
     setCurrentPlaylist({
       title: "",
       description: "",
+    });
+    toast.success("Playlist created!", {
+      style: {
+        fontSize: "16px",
+      },
     });
   };
 
@@ -49,16 +65,24 @@ const Modal = ({ setShowModel, video }) => {
     const newPlaylists = await deletePlaylistService(authToken, playlistId);
 
     setPlaylists(newPlaylists);
+    toast.success("Playlist removed!", {
+      style: {
+        fontSize: "16px",
+      },
+    });
   };
 
   return (
-    <div className="modal-background-container">
-      <div className="playlist-modal-container">
+    <div
+      className="modal-background-container"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <div className="playlist-modal-container" ref={modalRef}>
         <div className="title-and-close">
-          <h1>Save to...</h1>
+          <h2>Save to...</h2>
           <span
             className="material-icons close-model"
-            onClick={() => setShowModel(false)}
+            onClick={setShowModalClose}
           >
             close
           </span>
