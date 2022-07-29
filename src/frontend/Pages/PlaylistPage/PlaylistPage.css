@@ -1,6 +1,7 @@
 .playlist-card-container {
   padding: 1rem;
   margin-top: 0;
+  min-height: 80vh;
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: flex-start;
