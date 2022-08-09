@@ -6,7 +6,8 @@
   cursor: pointer;
   background-color: var(--color-body-bg);
   position: relative;
-  box-shadow: 0px 5px 5px rgb(0 0 0 / 45%);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
   border-radius: 7px;
 }
 .video-card-link {
@@ -16,7 +17,7 @@
   position: relative;
 }
 .video-card-container:hover .video-card-img {
-  filter: brightness(60%);
+  filter: brightness(70%);
 }
 .video-card-content {
   padding: 1rem;
@@ -38,11 +39,11 @@
 .action-container {
   width: 100%;
   position: absolute;
-  color: var(--color-primary);
+  color: var(--color-text);
   bottom: 0;
   justify-content: space-around;
   padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.3);
   display: none;
 }
 

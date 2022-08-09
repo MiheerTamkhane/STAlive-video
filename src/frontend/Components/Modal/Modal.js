@@ -122,7 +122,7 @@ const Modal = ({ video, setShowModalClose }) => {
         </div>
         {!showForm ? (
           <button
-            className="ct-nav-icons signin-text ct-btn"
+            className="ct-nav-icons signin-text ct-btn create-btn"
             onClick={() => setShowForm(true)}
           >
             Create Playlist
@@ -166,7 +166,7 @@ const Modal = ({ video, setShowModalClose }) => {
                 }
               ></textarea>
             </div>
-            <button className="signin-text ct-btn" type="submit">
+            <button className="signin-text ct-btn create-btn" type="submit">
               Create
             </button>
           </form>

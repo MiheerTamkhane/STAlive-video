@@ -12,16 +12,18 @@
   justify-content: center;
   z-index: 10;
 }
-
+.create-btn {
+  color: var(--color-body-bg);
+  background-color: var(--color-text);
+}
 .close-model {
   cursor: pointer;
 }
 .playlist-modal-container {
   padding: 1.6rem 2rem;
-  background-color: var(--secondary-bg);
+  background-color: var(--color-body-bg);
   display: flex;
   flex-direction: column;
-
   position: relative;
   max-width: max-content;
   border-radius: 7px;
@@ -52,7 +54,7 @@
   font-size: 1.6rem;
   border-radius: 3px;
   color: var(--color-primary);
-  background-color: var(--secondary-bg);
+  background-color: var(--color-body-bg);
   width: 100%;
   height: auto;
   margin-top: 0rem;

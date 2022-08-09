@@ -2,8 +2,8 @@
   text-decoration: none;
   font-size: 2rem;
   padding: 1rem 1.6rem;
-  color: var(--color-primary);
-  background-color: var(--secondary-bg);
+  color: var(--color-body-bg);
+  background-color: var(--color-text);
 }
 .history-container {
   width: 100%;

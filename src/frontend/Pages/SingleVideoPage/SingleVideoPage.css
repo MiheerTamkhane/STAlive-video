@@ -1,11 +1,12 @@
 .single-video-page {
-  padding: 1rem 0rem;
+  padding: 0.3rem 0rem;
   margin-left: 20rem;
   margin-top: 6rem;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
+  max-height: max-content;
 }
 .single-video-container {
   color: var(--color-text);
@@ -15,10 +16,12 @@
 
 .watch-next-container {
   color: var(--color-text);
-  height: 100%;
+  max-height: 100vh;
+  overflow: scroll;
   width: 28%;
-  padding: 1rem;
+  padding: 0.3rem 0rem;
 }
+
 .watch-next-container h1 {
   margin-left: 1rem;
 }
@@ -66,6 +69,17 @@
 .video-description {
   padding: 1rem 2rem;
   font-size: 2rem;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.watch-next-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.watch-next-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
 }
 
 @media only screen and (max-width: 900px) {

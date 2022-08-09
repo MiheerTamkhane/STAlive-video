@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-
+import toast from "react-hot-toast";
 import {
   useVideos,
   useAuth,
@@ -75,6 +75,11 @@ const SingleVideoPage = () => {
                   className="video-like-btn"
                   onClick={() => {
                     removeFromLikedVideosHandler(authToken, singleVideo._id);
+                    toast.success("Remove from likes!", {
+                      style: {
+                        fontSize: "16px",
+                      },
+                    });
                   }}
                 >
                   <span className="material-icons">favorite</span>
@@ -86,6 +91,11 @@ const SingleVideoPage = () => {
                   onClick={() => {
                     if (status) {
                       addToLikedVideosHandler(authToken, singleVideo);
+                      toast.success("Liked a video!", {
+                        style: {
+                          fontSize: "16px",
+                        },
+                      });
                     } else {
                       navigate("/join", { state: { from: location } });
                     }
@@ -104,6 +114,11 @@ const SingleVideoPage = () => {
                   className="video-like-btn"
                   onClick={() => {
                     removeFromWatchLaterHandler(authToken, singleVideo._id);
+                    toast.success("Remove from watchlater!", {
+                      style: {
+                        fontSize: "16px",
+                      },
+                    });
                   }}
                 >
                   <span className="material-icons">watch_later</span>
@@ -115,6 +130,11 @@ const SingleVideoPage = () => {
                   onClick={() => {
                     if (status) {
                       addToWatchLaterHandler(authToken, singleVideo);
+                      toast.success("Added to watchlater!", {
+                        style: {
+                          fontSize: "16px",
+                        },
+                      });
                     } else {
                       navigate("/join", { state: { from: location } });
                     }

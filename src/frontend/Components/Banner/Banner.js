@@ -12,7 +12,7 @@ const Banner = () => {
         <div className="hero-content">
           <h4>Your support makes a difference</h4>
           <p>
-            STALIVE exists because of support from people like you. When you
+            STAlive exists because of support from people like you. When you
             become a member, you make our mission of spreading ideas from all
             over the world possible.
           </p>

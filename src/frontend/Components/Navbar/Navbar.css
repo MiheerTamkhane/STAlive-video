@@ -6,8 +6,8 @@
   top: 0;
   z-index: 9;
 }
-.search-container {
-  margin: 0 0.5rem;
+.right-navbar {
+  gap: 0.5rem;
 }
 .logo {
   display: flex;
@@ -22,7 +22,7 @@
   font-size: 3.2rem;
   margin-left: 1rem;
   font-weight: bolder;
-  font-family: "Square Peg", cursive;
+  font-family: "Itim", cursive;
   letter-spacing: 1rem;
 }
 
@@ -39,6 +39,7 @@ input.ct-input.search-input {
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 }
+
 .search-container input.hide {
   display: none;
 }
@@ -46,17 +47,17 @@ input.ct-input.search-input {
   text-decoration: none;
   font-size: 2rem;
   padding: 1rem 1.6rem;
+  font-weight: bolder;
   color: var(--color-primary);
-  background-color: var(--color-body-bg);
+  background-color: var(--color-text);
 }
 .search-btn {
   color: var(--color-primary);
-  background-color: var(--color-body-bg);
+  background-color: var(--permanant-bg);
   border: none;
   cursor: pointer;
   padding: 1rem;
   border-radius: 50%;
-  margin-left: 1rem;
 }
 .close-btn {
   padding: 1rem;
@@ -68,7 +69,7 @@ input.ct-input.search-input {
 }
 
 .dropbtn {
-  background-color: var(--color-body-bg);
+  background-color: var(--permanant-bg);
   color: var(--color-primary);
   border: none;
   font-size: 3.6rem;

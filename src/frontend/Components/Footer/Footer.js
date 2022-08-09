@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer-left">
         <div className="ct-nav-logo">
           <NavLink to="/" className="logo">
-            <h1>STALIVE.</h1>
+            <h1>STAlive</h1>
           </NavLink>
           <small>Stalive © 2019 - 2022</small>
           <div className="social-div">

@@ -7,3 +7,4 @@ export { useLikedVideos, LikeProvider } from "./LikeContext";
 export { useWatchLater, WatchLaterProvider } from "./WatchLaterContext";
 export { useHistory, HistoryProvider } from "./HistoryContext";
 export { usePlaylists, PlaylistsProvider } from "./PlaylistContext";
+export { useTheme, ThemeProvider } from "./ThemeContext";

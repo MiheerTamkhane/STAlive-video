@@ -20,10 +20,10 @@
   padding: 1rem;
   background-color: var(--color-text);
   border: none;
-  color: var(--gray-700);
+  color: var(--color-body-bg);
   cursor: pointer;
 }
 .btn-container .active {
-  color: var(--color-primary-varient);
+  color: var(--color-text);
   background-color: var(--color-primary);
 }
