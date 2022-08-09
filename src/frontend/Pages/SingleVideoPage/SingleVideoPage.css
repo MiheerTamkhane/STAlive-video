@@ -1,5 +1,5 @@
 .single-video-page {
-  padding: 1rem 0rem;
+  padding: 0.3rem 0rem;
   margin-left: 20rem;
   margin-top: 6rem;
   height: 100%;
@@ -17,7 +17,7 @@
   color: var(--color-text);
   height: 100%;
   width: 28%;
-  padding: 1rem;
+  padding: 0.3rem 0rem;
 }
 .watch-next-container h1 {
   margin-left: 1rem;

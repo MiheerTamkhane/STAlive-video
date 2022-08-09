@@ -54,7 +54,7 @@ const Navbar = () => {
               )}
             </div>
           )}
-          <h1>STALIVE.</h1>
+          <h1>STAlive</h1>
         </div>
       </div>
       <div className="ct-right-nav">

@@ -12,3 +12,4 @@ export { Filter } from "./Filter/Filter";
 export { HorizontalCard } from "./HorizontalCard/HorizontalCard";
 export { Modal } from "./Modal/Modal";
 export { Footer } from "./Footer/Footer";
+export { ScrollToTop } from "./ScrollToTop/ScrollToTop";
