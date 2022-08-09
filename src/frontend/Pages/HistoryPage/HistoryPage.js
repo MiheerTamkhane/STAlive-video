@@ -20,11 +20,13 @@ const HistoryPage = () => {
           className="ct-nav-icons ct-btn clear-history-btn"
           onClick={() => {
             removeAllFromHistoryHandler(authToken);
-            toast.success("History cleared!", {
-              style: {
-                fontSize: "16px",
-              },
-            });
+            if (historyVideos.length > 0) {
+              toast.success("History cleared!", {
+                style: {
+                  fontSize: "16px",
+                },
+              });
+            }
           }}
         >
           Clear History
