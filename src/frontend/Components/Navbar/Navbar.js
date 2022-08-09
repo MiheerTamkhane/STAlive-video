@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Navigate, NavLink, useLocation, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { useAuth, useNav, useVideos, useFilter } from "../../Contexts";
-
+import { ThemeToggler } from "../ThemeToggler/ThemeToggler";
 import "./Navbar.css";
 const Navbar = () => {
   const [isSearch, setIsSearch] = useState(false);
@@ -58,7 +58,33 @@ const Navbar = () => {
         </div>
       </div>
       <div className="ct-right-nav">
-        <div className="ct-nav-user">
+        <div className="ct-nav-user right-navbar">
+          {location.pathname !== "/" && (
+            <div className="ct-nav-icons search-container">
+              <input
+                type="text"
+                onChange={searchHandler}
+                className={isSearch ? "ct-input search-input" : "ct-input hide"}
+                placeholder="Type to search"
+              />
+              {isSearch ? (
+                <button
+                  className="material-icons close-btn"
+                  onClick={() => setIsSearch(false)}
+                >
+                  close
+                </button>
+              ) : (
+                <button
+                  className="material-icons search-btn"
+                  onClick={() => setIsSearch(true)}
+                >
+                  search
+                </button>
+              )}
+            </div>
+          )}
+          <ThemeToggler />
           {!status ? (
             <NavLink to="/join" className="ct-nav-icons signin-text ct-btn">
               SIGN IN
@@ -87,31 +113,6 @@ const Navbar = () => {
                   <span className="material-icons-outlined">logout</span>
                 </button>
               </div>
-            </div>
-          )}
-          {location.pathname !== "/" && (
-            <div className="ct-nav-icons search-container">
-              <input
-                type="text"
-                onChange={searchHandler}
-                className={isSearch ? "ct-input search-input" : "ct-input hide"}
-                placeholder="Type to search"
-              />
-              {isSearch ? (
-                <button
-                  className="material-icons close-btn"
-                  onClick={() => setIsSearch(false)}
-                >
-                  close
-                </button>
-              ) : (
-                <button
-                  className="material-icons search-btn"
-                  onClick={() => setIsSearch(true)}
-                >
-                  search
-                </button>
-              )}
             </div>
           )}
         </div>

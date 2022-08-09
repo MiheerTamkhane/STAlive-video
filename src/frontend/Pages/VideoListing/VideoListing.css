@@ -3,7 +3,7 @@
 }
 .videos-container-page h1 {
   font-size: 3.2rem;
-  color: white;
+  color: var(--color-text);
   margin-left: 20rem;
   margin-top: 7.5rem;
   display: flex;

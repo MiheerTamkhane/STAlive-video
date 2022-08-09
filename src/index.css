@@ -6,14 +6,25 @@
   box-sizing: border-box;
 }
 :root {
-  --color-body-bg: #121212;
-  --secondary-bg: #292929;
-  --color-text: #f2e7fe;
-  --color-primary: #bb86fc;
-  --color-primary-muted: #1f1a24;
+  --color-primary: hsl(268, 100%, 40%);
+  --color-primary-muted: #1d1a24;
   --color-primary-varient: #3700b3;
   --color-error: #cf6679;
+  --permanant-bg: hsl(197, 14%, 10%);
+  --color-moon: hsl(220, 23%, 95%);
+  --color-sun: hsl(56, 100%, 40%);
 }
+body.light-mode {
+  --color-body-bg: hsl(220, 23%, 95%);
+  --secondary-bg: hsl(0, 0%, 88%);
+  --color-text: hsl(215, 28%, 17%);
+}
+body.dark-mode {
+  --color-body-bg: hsl(197, 14%, 10%);
+  --secondary-bg: hsl(197, 10%, 13%);
+  --color-text: hsl(270, 23%, 95%);
+}
+
 html {
   font-size: 62.5%;
 }

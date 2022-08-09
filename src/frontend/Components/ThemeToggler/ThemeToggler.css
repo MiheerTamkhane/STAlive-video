@@ -1,0 +1,23 @@
+.dark-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: var(--permanant-bg);
+}
+.dark-icon {
+  font-size: 2.6rem;
+  transition: cubic-bezier(0.7, 0.28, 0.1, 0.045) 0.35s;
+  transform: rotate(0deg);
+  color: var(--color-moon);
+}
+
+.light-icon {
+  font-size: 2.6rem;
+  transition: cubic-bezier(0.7, 0.28, 0.1, 0.045) 0.35s;
+  transform: rotate(90deg);
+  color: var(--color-sun);
+}

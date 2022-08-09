@@ -30,6 +30,7 @@
   background-color: var(--color-primary-muted);
 }
 .sidebar-items:hover {
+  color: var(--color-primary);
   background-color: var(--color-primary-muted);
 }
 

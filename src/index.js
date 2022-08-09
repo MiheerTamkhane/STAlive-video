@@ -13,6 +13,7 @@ import {
   WatchLaterProvider,
   HistoryProvider,
   PlaylistsProvider,
+  ThemeProvider,
 } from "./frontend/Contexts";
 // Call make Server
 makeServer();
@@ -20,23 +21,25 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <NavProvider>
-          <VideosProvider>
-            <FilterProvider>
-              <LikeProvider>
-                <WatchLaterProvider>
-                  <HistoryProvider>
-                    <PlaylistsProvider>
-                      <App />
-                    </PlaylistsProvider>
-                  </HistoryProvider>
-                </WatchLaterProvider>
-              </LikeProvider>
-            </FilterProvider>
-          </VideosProvider>
-        </NavProvider>
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <NavProvider>
+            <VideosProvider>
+              <FilterProvider>
+                <LikeProvider>
+                  <WatchLaterProvider>
+                    <HistoryProvider>
+                      <PlaylistsProvider>
+                        <App />
+                      </PlaylistsProvider>
+                    </HistoryProvider>
+                  </WatchLaterProvider>
+                </LikeProvider>
+              </FilterProvider>
+            </VideosProvider>
+          </NavProvider>
+        </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

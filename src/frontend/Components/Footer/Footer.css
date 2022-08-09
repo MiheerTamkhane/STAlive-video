@@ -20,6 +20,7 @@
 }
 .logo {
   text-decoration: none;
+  color: var(--color-primary);
 }
 .footer-left small {
   margin-left: 1.2rem;
@@ -53,7 +54,7 @@ h3 {
   transition: all 200ms ease-in;
 }
 .footer-links .footer-link:hover {
-  color: var(--gray-100);
+  color: var(--color-text);
 }
 .social-div {
   margin: 1.6rem 0;
