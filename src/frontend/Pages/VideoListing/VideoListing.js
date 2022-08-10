@@ -18,18 +18,18 @@ const VideoListing = () => {
   return (
     <div className="videos-container-page">
       <Sidebar />
-      {finalVideos.length > 0 ? (
-        <div className="videos-container">
-          <Filter />
-          {finalVideos.map((item) => (
+      <div className="videos-container">
+        <Filter />
+        {finalVideos.length > 0 ? (
+          finalVideos.map((item) => (
             <div key={item._id}>
               <VideoCard key={item._id} data={item} />
             </div>
-          ))}
-        </div>
-      ) : (
-        <h1>Video Not Found</h1>
-      )}
+          ))
+        ) : (
+          <h1>Video Not Found</h1>
+        )}
+      </div>
     </div>
   );
 };

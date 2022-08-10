@@ -1,10 +1,9 @@
 .videos-container-page {
   min-height: 80vh;
 }
-.videos-container-page h1 {
+.videos-container h1 {
   font-size: 3.2rem;
   color: var(--color-text);
-  margin-left: 20rem;
   margin-top: 7.5rem;
   display: flex;
   align-items: center;
