@@ -1,13 +1,15 @@
 .horizontal-card-wrapper {
   margin-bottom: 2rem;
   height: 10rem;
-  max-width: 54rem;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   position: relative;
   background-color: var(--color-body-bg);
 }
 .horizontal-card-container {
+  width: 40rem;
+  max-width: 40rem;
   text-decoration: none;
   display: flex;
   overflow: hidden;
@@ -42,6 +44,7 @@
   justify-content: center;
   align-items: center;
   padding: 5px 1rem;
+  margin-right: 1.5rem;
   border: none;
   outline: none;
   cursor: pointer;
