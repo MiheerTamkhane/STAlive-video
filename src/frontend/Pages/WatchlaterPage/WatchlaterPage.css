@@ -1,12 +1,10 @@
 .watch-later-container {
-  margin-left: 22rem;
-  min-height: 80vh;
-  margin-top: 2rem;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex-wrap: wrap;
-  align-self: flex-start;
+  margin-left: 20rem;
+  min-height: 80vh;
+  margin-top: 2rem;
 }
 
 @media only screen and (max-width: 900px) {
