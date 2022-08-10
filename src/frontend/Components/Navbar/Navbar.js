@@ -37,21 +37,12 @@ const Navbar = () => {
         <div className="logo">
           {location.pathname !== "/" && location.pathname !== "/join" && (
             <div className="sidebar-btn">
-              {showSidebar ? (
-                <span
-                  className="material-icons"
-                  onClick={() => setShowSidebar(false)}
-                >
-                  close
-                </span>
-              ) : (
-                <span
-                  className="material-icons"
-                  onClick={() => setShowSidebar(true)}
-                >
-                  menu
-                </span>
-              )}
+              <span
+                className="material-icons"
+                onClick={() => setShowSidebar(true)}
+              >
+                menu
+              </span>
             </div>
           )}
           <h1>STAlive</h1>
